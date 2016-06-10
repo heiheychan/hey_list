@@ -1,18 +1,7 @@
-// Check Daylight Saving Time
-Date.prototype.stdTimezoneOffset = function() {
-    var jan = new Date(this.getFullYear(), 0, 1);
-    var jul = new Date(this.getFullYear(), 6, 1);
-    return Math.max(jan.getTimezoneOffset(), jul.getTimezoneOffset());
-}
-
-Date.prototype.dst = function() {
-    return this.getTimezoneOffset() < this.stdTimezoneOffset();
-}
-var today = new Date();
-
-function set_time_zone_offset() {
-    offset = today.getTimezoneOffset();
-    if (today.dst()) { offset -= 60  };
-    Cookies.set('time_zone', offset);
-}
-set_time_zone_offset();
+$(document).ready(function(){
+  function set_time_zone_offset() {
+      var current_time = new Date();
+      Cookies('time_zone', current_time.getTimezoneOffset());
+  }
+  set_time_zone_offset();  
+})

@@ -1,5 +1,4 @@
 $(document).ready(function(){
-  console.log("been here!")
   $('#category_id').change(function(){
     $.ajax({
       url: "/categories/" + $(this).val() + "/get_subcategories.js",

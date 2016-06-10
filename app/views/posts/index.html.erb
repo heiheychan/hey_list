@@ -14,7 +14,8 @@
       <td><%= p.category %></td>
       <td><%= p.sub_category %></td>
       <td><%= p.price %></td>
-      <td><%= p.updated_at %></td>
+      <td><%= user_timezone(p.created_at).strftime("%b %e, %l:%M %p") %></td>
+      <td><%= user_timezone(p.updated_at).strftime("%b %e, %l:%M %p") %></td>
       <td>
         <%= link_to "Delete Post", post_path(p), :method => :delete, :data => {:confirm => "Are you sure?"} %>
       </td>

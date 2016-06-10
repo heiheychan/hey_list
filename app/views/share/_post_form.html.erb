@@ -3,12 +3,12 @@
 <%= f.label :category %>
 <%= f.collection_select :category, Category.all, :id, :name, preselect_category(@post), id: "category_id" %>
 <div id="subcategories_select">
-  <% if @post.category != nil %>
-    <%= f.collection_select :category, Category.find_by_name(@post.category).sub_categories, :name, :name %>
+  <% if @post.sub_category != "" %>
+    <%= f.collection_select :sub_category, Category.find_by_name(@post.category).sub_categories, :name, :name %>
   <% end %>
 </div>
 <%= f.label :price %>
-<%= f.number_field :price %>
+<%= f.text_field :price %>
 <%= f.label :content %>
 <%= f.text_area :content %>
 <%= f.submit %>

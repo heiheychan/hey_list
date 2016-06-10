@@ -1,6 +1,4 @@
 class PostsController < ApplicationController
-  
-  
   def index
     @category = Category.all
     @posts = get_post

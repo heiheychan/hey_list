@@ -1,3 +1,4 @@
+// Generate HTML string for sub-category select
 <% if @subcategories.any? %>
   var html_str = "<select name=\"post[sub_category]\"><selected=\"selected\">Please select</option>"
   <% @subcategories.each do |sc| %>

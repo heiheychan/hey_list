@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160609225433) do
+ActiveRecord::Schema.define(version: 20160610074419) do
 
   create_table "categories", force: :cascade do |t|
     t.string   "name"
@@ -21,8 +21,8 @@ ActiveRecord::Schema.define(version: 20160609225433) do
 
   create_table "posts", force: :cascade do |t|
     t.string   "category"
-    t.string   "sub_category"
-    t.integer  "price"
+    t.string   "sub_category", default: "",   null: false
+    t.decimal  "price"
     t.integer  "visit",        default: 0,    null: false
     t.string   "title"
     t.text     "content"

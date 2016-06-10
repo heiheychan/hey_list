@@ -4,7 +4,7 @@
 <% unless @post.sub_category.nil? %>
   <%= @post.sub_category %>
 <% end %>
-<%= @post.price %>
+<%= number_to_currency(@post.price, precision: 3, significant: true, strip_insignificant_zeros: true) %>
 <%= @post.content %>
 <%= user_timezone(@post.created_at).strftime("%b %e, %l:%M %p") %>
 <%= user_timezone(@post.updated_at).strftime("%b %e, %l:%M %p") %>

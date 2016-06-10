@@ -1,11 +1,19 @@
 $(document).ready(function(){
+  console.log("Been here!");
+  // Fire an Ajax when user makes changes
   $('#category_id').change(function(){
-    $.ajax({
-      url: "/categories/" + $(this).val() + "/get_subcategories.js",
-      type: "GET",
-      dataType: "script",
-      data: {"category_id": $(this).val()},
-      success: console.log("sent")
-    })
+    console.log("Been here!");
+    v = $(this).val()
+    if(v.length >= 1){
+      $.ajax({
+        url: "/categories/" + v + "/get_subcategories.js",
+        type: "GET",
+        dataType: "script",
+        data: {"category_id": v}
+      })
+    } else {
+      $('#subcategories_select').html("");
+    }
   });
 })
+

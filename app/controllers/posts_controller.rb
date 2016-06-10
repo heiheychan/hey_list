@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-
+  
+  
   def index
     @category = Category.all
     @posts = get_post
@@ -10,7 +11,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(strong_param)
+    @post = Post.new(post_params)
     if !(params[:post][:category].empty?)
       @post[:category] = Category.find(params[:post][:category]).name
     end
@@ -34,12 +35,29 @@ class PostsController < ApplicationController
     end
   end
 
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if !(params[:post][:category].empty?)
+      params[:post][:category] = Category.find(params[:post][:category]).name
+    end
+
+    if @post.update_attributes(post_params)
+      redirect_to post_path(@post)
+    else
+      render 'edit'
+    end
+  end
+
   private
   def get_post
     posts = Post.all
   end
 
-  def strong_param
+  def post_params
     params.require(:post).permit(:category, :sub_category, :price, :title, :content)
   end
 end

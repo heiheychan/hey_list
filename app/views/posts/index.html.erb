@@ -1,16 +1,11 @@
 <h1>Display All Posts</h1>
-<ul>
-  <li>Serve as the root path</li>
-  <li>Able to Search</li>
-  <li>Lead to Details</li>
-</ul>
 
 <%= link_to "Create Post", new_post_path %>
-
+<hr>
 <table>
   <% @posts.each do |p| %>
     <tr>
-      <td><%= p.title %></td>
+      <td><%= link_to p.title, post_path(p) %></td>
       <td><%= p.category %></td>
       <td><%= p.sub_category %></td>
       <td><%= p.price %></td>
@@ -18,6 +13,7 @@
       <td><%= user_timezone(p.updated_at).strftime("%b %e, %l:%M %p") %></td>
       <td>
         <%= link_to "Delete Post", post_path(p), :method => :delete, :data => {:confirm => "Are you sure?"} %>
+        <%= link_to "Edit Post", edit_post_path(p) %>
       </td>
     </tr>
   <% end %>

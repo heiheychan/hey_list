@@ -7,3 +7,19 @@
 
 <%= link_to "Create Post", new_post_path %>
 
+<table>
+  <% @posts.each do |p| %>
+    <tr>
+      <td><%= p.title %></td>
+      <td><%= p.category %></td>
+      <td><%= p.sub_category %></td>
+      <td><%= p.price %></td>
+      <td><%= p.updated_at %></td>
+      <td>
+        <%= link_to "Delete Post", post_path(p), :method => :delete, :data => {:confirm => "Are you sure?"} %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+
+

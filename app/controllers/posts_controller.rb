@@ -11,7 +11,9 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(strong_param)
-    @post[:category] = Category.find(params[:post][:category]).name
+    if !(params[:post][:category].empty?)
+      @post[:category] = Category.find(params[:post][:category]).name
+    end
 
     if @post.save
       redirect_to post_path(@post)
@@ -22,6 +24,14 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+  end
+
+  def destroy
+    if Post.find(params[:id]).destroy
+      redirect_to root_path
+    else
+      render post_path(params[:id])
+    end
   end
 
   private

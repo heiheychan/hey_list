@@ -1,7 +1,10 @@
 <h1>Single Post</h1>
 <%= @post.title %>
 <%= @post.category %>
-<%= @post.sub_category %>
+<% unless @post.sub_category.nil? %>
+  <%= @post.sub_category %>
+<% end %>
 <%= @post.price %>
 <%= @post.content %>
 <%= @post.created_at %>
+<%= @post.updated_at %>

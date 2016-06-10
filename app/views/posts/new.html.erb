@@ -1,2 +1,7 @@
 <h1>Create a post</h1>
-<%= render partial: "share/post_form" %>
+<%= form_for @post do |f| %>
+  <% if @post.errors.any? %>
+    <%= render partial: "share/post_form_error" %>
+  <% end %>
+  <%= render partial: "share/post_form", locals: {:f => f} %>
+<% end %>

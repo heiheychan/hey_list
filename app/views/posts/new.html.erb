@@ -1,0 +1,11 @@
+<h1>Create a post</h1>
+
+<%= form_for @post do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :category %>
+  <%= f.collection_select :category, Category.all, :id, :name, { prompt: "Choose a category" }, id: "category_id" %>
+  <div id="subcategories_select">
+   <%= f.collection_select :sub_category, SubCategory.all, :id, :name, { prompt: "Choose a subcategory" }, { disabled: true } %>
+  </div>
+<% end %>

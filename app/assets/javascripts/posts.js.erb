@@ -1,0 +1,22 @@
+
+// $('form').on('change', '#category_id', function() {
+//   var category_id = $(this).val();
+//   alert('been here!');
+//   $.ajax({
+//     url: "/categories/" + category_id + "/get_subcategories",
+//     type: "GET",
+//     dataType: "script",
+//     data: { "category_id": category_id }
+//   });
+// });
+
+$(document).ready(function(){
+  $('#category_id').change(function(){
+    $.ajax({
+      url: "/categories/" + $(this).val() + "/get_subcategories.js",
+      type: "GET",
+      dataType: "script",
+      data: {"category_id": $(this).val()}
+    })
+  });
+})

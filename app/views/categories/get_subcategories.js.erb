@@ -1,0 +1,14 @@
+<% if @subcategories.any? %>
+  var html_str = "<select name=\"post[sub_category]\"><selected=\"selected\">Please select</option>"
+  <% @subcategories.each do |sc| %>
+    html_str += "<option value=\"";
+    html_str += "<%= sc.name %>";
+    html_str += "\">";
+    html_str += "<%= sc.name %>";
+    html_str += "</option>"
+  <% end %>
+  html_str += "</select>"
+  $('#subcategories_select').html(html_str)
+<% else %>
+  $('#subcategories_select').html("")
+<% end %>

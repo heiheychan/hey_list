@@ -1,10 +1,12 @@
 $(document).ready(function(){
+  console.log("been here!")
   $('#category_id').change(function(){
     $.ajax({
       url: "/categories/" + $(this).val() + "/get_subcategories.js",
       type: "GET",
       dataType: "script",
-      data: {"category_id": $(this).val()}
+      data: {"category_id": $(this).val()},
+      success: console.log("sent")
     })
   });
 })

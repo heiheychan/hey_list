@@ -8,7 +8,11 @@
       <td><%= link_to p.title, post_path(p) %></td>
       <td><%= p.category %></td>
       <td><%= p.sub_category %></td>
-      <td><%= number_to_currency(p.price, precision: 3, significant: true, strip_insignificant_zeros: true) %></td>
+      <% if p.price_visible %>
+        <td>
+          <%= number_to_currency(p.price, precision: 3, significant: true, strip_insignificant_zeros: true) %>
+        </td>
+      <% end %>
       <td><%= user_timezone(p.created_at).strftime("%b %e, %l:%M %p") %></td>
       <td><%= user_timezone(p.updated_at).strftime("%b %e, %l:%M %p") %></td>
       <td>

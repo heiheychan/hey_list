@@ -7,6 +7,8 @@
     <%= f.collection_select :sub_category, Category.find_by_name(@post.category).sub_categories, :name, :name %>
   <% end %>
 </div>
+<%= f.label :price_visible, "Hide Price?" %>
+<%= f.check_box :price_visible, {}, true, false %>
 <%= f.label :price %>
 <%= f.text_field :price %>
 <%= f.label :address %>

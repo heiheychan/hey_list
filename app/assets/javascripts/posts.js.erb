@@ -2,7 +2,6 @@ $(document).ready(function(){
   // Change the sub-category select when
   // category select is changed
   $('#category_id').change(function(){
-    console.log("Been here!");
     v = $(this).val()
     if(v.length >= 1){
       $.ajax({
@@ -15,17 +14,12 @@ $(document).ready(function(){
       $('#subcategories_select').html("");
     }
   });
-  // Ajax call to retrieve information
-  $.ajax({
-    url: "/posts",
-    type: "GET",
-    dataType: "html",
-    data: {
-            "city": "Ann Arbor",
-            "radius": 10
-          },
-    success:
-      console.log("Been here")
-  })
+  // It is triggered when users click the 'Search Posts'
+  // button
+  $('#posts_search').click(function(){
+    Cookies("search_cat", $('#search_form #category').val());
+    Cookies("search_city", $('#search_form #city').val());
+    Cookies("search_radius", $('#search_form #radius').val());
+  })   
 })
 

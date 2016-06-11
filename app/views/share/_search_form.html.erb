@@ -1,0 +1,14 @@
+<%= form_tag posts_path, method: :get, :id => "search_form" do %>
+  <p>
+    <%= text_field_tag :keyword, "", :placeholder => "Keyword" %>
+    <select name="category" id="category">
+      <option selected="selected" value="All">All</option>
+      <% Category.all.each do |c| %>
+        <option value="<%= c.name %>"><%= c.name %></option>
+      <% end %>
+    </select>
+    <%= text_field_tag :city, cookies[:search_city] || "", :placeholder => "City" %>
+    <%= number_field_tag :radius, cookies[:search_radius] || 20, :placeholder => "Radius" %>
+    <%= submit_tag "Search Posts", id: "posts_search" %>
+  </p>
+<% end %>

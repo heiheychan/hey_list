@@ -52,13 +52,13 @@ class PostsController < ApplicationController
 
   private
   def get_post
-    if params[:city].present?
-      posts = Post.near(params[:city], params[:radius].to_i).order("distance")
-      puts posts
-    else
-      posts = Post.all
+    posts = Post.all
+    posts = posts.near(cookies[:search_city], cookies[:search_radius].to_i).order("distance") if !(cookies[:search_city].blank?)
+    posts = posts.where("title like ?","%#{params[:keyword]}%") if params[:keyword].present?
+    if !(cookies[:search_cat].blank?) && cookies[:search_cat] != "All"
+      posts = posts.where("category like ?", "%#{cookies[:search_cat]}%") 
     end
-    posts
+    return posts
   end
 
   def post_params

@@ -4,7 +4,7 @@
 <% unless @post.sub_category.nil? %>
   <%= @post.sub_category %>
 <% end %>
-<% if @post.price_visible %>
+<% if !@post.price_hide %>
   <%= number_to_currency(@post.price, precision: 3, significant: true, strip_insignificant_zeros: true) %>
 <% end %>
 <%= markdown(@post.content) %>

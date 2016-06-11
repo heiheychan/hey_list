@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   def index
     @category = Category.all
-    @posts = get_post
+    @posts = get_search_results
   end
 
   def new
@@ -51,17 +51,17 @@ class PostsController < ApplicationController
   end
 
   private
-  def get_post
+  def get_search_results
     posts = Post.all
     posts = posts.near(cookies[:search_city], cookies[:search_radius].to_i).order("distance") if !(cookies[:search_city].blank?)
     posts = posts.where("title like ?","%#{params[:keyword]}%") if params[:keyword].present?
     if !(cookies[:search_cat].blank?) && cookies[:search_cat] != "All"
       posts = posts.where("category like ?", "%#{cookies[:search_cat]}%") 
     end
-    return posts
+    return posts.order("created_at DESC")
   end
 
   def post_params
-    params.require(:post).permit(:category, :sub_category, :price, :title, :content, :address, :price_visible)
+    params.require(:post).permit(:category, :sub_category, :price, :title, :content, :address, :price_hide)
   end
 end

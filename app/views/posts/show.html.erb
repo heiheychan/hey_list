@@ -5,8 +5,10 @@
   <%= @post.sub_category %>
 <% end %>
 <%= number_to_currency(@post.price, precision: 3, significant: true, strip_insignificant_zeros: true) %>
-<%= @post.content %>
+<%= simple_format(@post.content) %>
 <%= user_timezone(@post.created_at).strftime("%b %e, %l:%M %p") %>
 <%= user_timezone(@post.updated_at).strftime("%b %e, %l:%M %p") %>
-
+<%= @post.address %>
+<%= @post.latitude %>
+<%= @post.longitude %>
 <%= link_to "Home Page", root_path %>

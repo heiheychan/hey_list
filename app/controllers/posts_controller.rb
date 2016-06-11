@@ -52,10 +52,16 @@ class PostsController < ApplicationController
 
   private
   def get_post
-    posts = Post.all
+    if params[:city].present?
+      posts = Post.near(params[:city], params[:radius].to_i).order("distance")
+      puts posts
+    else
+      posts = Post.all
+    end
+    posts
   end
 
   def post_params
-    params.require(:post).permit(:category, :sub_category, :price, :title, :content)
+    params.require(:post).permit(:category, :sub_category, :price, :title, :content, :address)
   end
 end

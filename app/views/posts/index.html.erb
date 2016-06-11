@@ -1,6 +1,12 @@
 <h1>Display All Posts</h1>
-
 <%= link_to "Create Post", new_post_path %>
+<%= form_tag posts_path, method: :get do %>
+  <p>
+    <%= text_field_tag :city, cookies[:search_city] || "Ann Arbor", :placeholder => "City" %>
+    <%= number_field_tag :radius, cookies[:search_radius] || 10, :placeholder => "Radius" %>
+    <%= submit_tag "Search Posts", id: "posts_search" %>
+  </p>
+<% end %>
 <hr>
 <table>
   <% @posts.each do |p| %>

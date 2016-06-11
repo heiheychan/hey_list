@@ -15,5 +15,17 @@ $(document).ready(function(){
       $('#subcategories_select').html("");
     }
   });
+  // Ajax call to retrieve information
+  $.ajax({
+    url: "/posts",
+    type: "GET",
+    dataType: "html",
+    data: {
+            "city": "Ann Arbor",
+            "radius": 10
+          },
+    success:
+      console.log("Been here")
+  })
 })
 

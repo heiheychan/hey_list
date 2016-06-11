@@ -15,6 +15,8 @@ gem 'bootstrap-sass'
 gem 'devise'
 gem 'geocoder'
 gem 'js_cookie_rails'
+gem 'pygments.rb'
+gem 'redcarpet'
 
 
 group :development, :test do

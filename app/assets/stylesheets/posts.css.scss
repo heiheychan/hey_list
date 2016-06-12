@@ -77,76 +77,87 @@
         }
       }
     }
-    .posts {
+    .posts-wrapper {
       padding: 1.5% 10%;
-      .one-post {
-        width: 49.8%;
+      .posts {
+        width: 75%;
+        padding: 0;
+        margin: 0;
+        vertical-align: top;
         box-sizing: border-box;
-        border-bottom: 2.5px solid $fade;
-        border-right: 2.5px solid $fade;
-        border-radius: 5px;
         display: inline-block;
-        margin-bottom: 25px;
-        padding: 18px 10px;
-        position: relative;
-        .top {
-          .cat {
-            color: $fade;
-            display: inline-block;
-            font-size: 1em;
-            margin: 0;
-            margin-bottom: 2px;
-          }
-          h3 {
-            margin-left: 1px;
-            font-size: 1.1em;
-            display: inline-block;
-          }
-          .price {
-            float: right;
-            font-size: 1.2em;
-          }
-        }
-        .bottom {
-          p {
-            float: left;
-            .location, .create-at {
-              font-size: 0.7em;
+        .one-post {
+          width: 49%;
+          box-sizing: border-box;
+          border-bottom: 2.5px solid $fade;
+          border-right: 2.5px solid $fade;
+          border-radius: 5px;
+          display: inline-block;
+          margin-bottom: 25px;
+          padding: 18px 10px;
+          position: relative;
+          .top {
+            .cat {
+              color: $fade;
+              display: inline-block;
+              font-size: 1em;
+              margin: 0;
+              margin-bottom: 2px;
             }
-            .label {
-              font-size: 0.62em;
+            h3 {
+              margin-left: 1px;
+              font-size: 1.1em;
+              display: inline-block;
+            }
+            .price {
+              float: right;
+              font-size: 1.2em;
             }
           }
-          .price {
-            position: relative;
-            bottom: 10px;
-            float: right;
-            font-size: 2em;
+          .bottom {
+            p {
+              float: left;
+              .location, .create-at {
+                font-size: 0.7em;
+              }
+              .label {
+                font-size: 0.62em;
+              }
+            }
+            .price {
+              position: relative;
+              bottom: 10px;
+              float: right;
+              font-size: 2em;
+            }
+          }
+          .post-buttons {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            .edit-post, .delete-post {
+              border-radius: 5px;
+              font-size: 0.9em;
+              color: white;
+              padding: 5px 10px;
+              text-align: center;
+              border-bottom: 1.2px solid grey;
+              border-right: 1.2px solid grey;
+            }
+            .edit-post {
+              background-color: skyblue;
+              display: inline-block;
+            }
+            .delete-post {
+              background-color: #F08080;
+              display: inline-block;
+            }
           }
         }
-        .post-buttons {
-          position: absolute;
-          top: 5px;
-          right: 5px;
-          .edit-post, .delete-post {
-            border-radius: 5px;
-            font-size: 0.9em;
-            color: white;
-            padding: 5px 10px;
-            text-align: center;
-            border-bottom: 1.2px solid grey;
-            border-right: 1.2px solid grey;
-          }
-          .edit-post {
-            background-color: skyblue;
-            display: inline-block;
-          }
-          .delete-post {
-            background-color: #F08080;
-            display: inline-block;
-            margin-left: 3px;
-          }
-        }
+      }
+      .google-ad-wrapper {
+        display: inline-block;
+        width: 20%;
       }
     }
   }

@@ -1,0 +1,24 @@
+@media screen and (max-width: 760px) {
+  .posts-index {
+    .main {
+      .search {
+        input, select, input[type="text"] {
+          width: 100%;
+          margin-bottom: 3px;
+        }
+      }
+      .posts-wrapper {
+        .posts {
+          width: 100%;
+          .one-post {
+            width: 100%;
+          }
+        }
+        .google-ad-wrapper {
+          display: none;
+          width: 0;
+        }
+      }
+    }
+  }
+}

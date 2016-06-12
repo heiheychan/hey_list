@@ -23,13 +23,19 @@ $(document).ready(function(){
   })
   // Show buttons when a post is hovered
   // And hide it when mouse leave
+  // and also --- Change style of post title when it is hovered
   $('.one-post').hover(
     function(){
       $(this).find('.post-buttons').show();
+      $(this).find('h3').css("color","steelblue");
+      $(this).find('h3').css("text-decoration","underline");
     },
     function(){
       $(this).find('.post-buttons').hide();
+      $(this).find('h3').css("color","black");
+      $(this).find('h3').css("text-decoration","none");
     }
   )
+
 })
 

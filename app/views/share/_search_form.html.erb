@@ -1,7 +1,7 @@
 <div class="search">
   <%= form_tag posts_path, method: :get, :id => "search_form" do %>
     <input name="utf8" type="hidden" value="&#x2713;" />
-    <%= text_field_tag :keyword, "", :placeholder => "Keyword" %>
+    <%= text_field_tag :keyword, "", :placeholder => "Keyword", :class => "search_keyword" %>
     <select name="category" id="category">
       <option selected="selected" value="All">All</option>
       <% Category.all.each do |c| %>

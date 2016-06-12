@@ -60,6 +60,9 @@
           border: 1px solid grey;
           padding-left: 5px;
         }
+        .search_keyword {
+          width: 300px;
+        }
         input[type="submit"] {
           background-color: $contrast;
           padding-left: 5%;
@@ -83,20 +86,20 @@
         border-right: 2.5px solid $fade;
         border-radius: 5px;
         display: inline-block;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
         padding: 18px 10px;
         position: relative;
         .top {
           .cat {
             color: $fade;
             display: inline-block;
-            font-size: 1.2em;
+            font-size: 1em;
             margin: 0;
             margin-bottom: 2px;
           }
           h3 {
             margin-left: 1px;
-            font-size: 1.2em;
+            font-size: 1.1em;
             display: inline-block;
           }
           .price {

@@ -4,16 +4,19 @@
       <a href="#" class="logo">hey!List</a>
       <nav>
         <a href="<%= new_post_path %>"><span class="glyphicon glyphicon-plus-sign"></span>Create Post</a>
+        <a href="#">Log in</a>
         <a href="#">Sign up</a>
       </nav>
     </div>
     <div class="main-text">
       <h1>Welcome to hey!list</h1>
-      <p>A classified for international students! By International student :)</p>
+      <p>The classified for international students. By International student :)</p>
     </div>
   </section>
   <section class="main">
+
     <%= render(:partial => "share/search_form") %>
+
     <div class="posts">
     <% @posts.each do |p| %>
       <div class="one-post">
@@ -30,7 +33,9 @@
           <div class="bottom clearfix">
             <p>
               <span class="label label-<%= get_label(p.sub_category) %>"><%= p.sub_category %></span>
-              &#183;
+              <% if !p.sub_category.empty? %>
+                &#183;
+              <% end %>
               <span class="location"><%= p.address %></span>
               &#183;
               <span class="create-at"><%= user_timezone(p.created_at).strftime("%b %e, %l:%M %p") %></span>

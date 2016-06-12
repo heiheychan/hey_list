@@ -14,12 +14,13 @@
 <%= @post.address %>
 <%= @post.latitude %>
 <%= @post.longitude %>
+<%= @post.user.id %>
 <%= link_to "Edit Page", edit_post_path(@post) %>
 
 <%= render(:partial => "share/comment_form") %>
 
 <% @post.comments.each do |c| %>
-  <p><%= c.content %>---<span><%= c.created_at %></span>---<span><%= link_to "Delete", comment_path(c), method: :delete %></span></p>
+  <p><%= c.content %>---<span><%= c.created_at %></span>---<span><%= c.user.id %></span>---<span><%= link_to "Delete", comment_path(c), method: :delete %></span></p>
 
 <% end %>
 

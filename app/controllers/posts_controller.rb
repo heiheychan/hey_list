@@ -5,11 +5,11 @@ class PostsController < ApplicationController
   end
 
   def new
-    @post = Post.new
+    @post = current_user.posts.build
   end
 
   def create
-    @post = Post.new(post_params)
+    @post = current_user.posts.build(post_params)
     if !(params[:post][:category].empty?)
       @post[:category] = Category.find(params[:post][:category]).name
     end
@@ -22,7 +22,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-    @comment = Comment.new
+    @comment = current_user.comments.build
   end
 
   def destroy

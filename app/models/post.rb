@@ -1,8 +1,9 @@
 class Post < ActiveRecord::Base
+  has_many :comments
   validates :title, presence: true, 
                     length: {
-                      maximum: 100,
-                      minimum: 5
+                      maximum: 140,
+                      minimum: 1
                     }
   validates :category, presence: true
   validates :price, numericality: {
@@ -11,5 +12,4 @@ class Post < ActiveRecord::Base
 
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
-
 end

@@ -13,7 +13,6 @@ class PostsController < ApplicationController
     if !(params[:post][:category].empty?)
       @post[:category] = Category.find(params[:post][:category]).name
     end
-
     if @post.save
       redirect_to post_path(@post)
     else
@@ -23,6 +22,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comment = Comment.new
   end
 
   def destroy

@@ -20,6 +20,16 @@ $(document).ready(function(){
     Cookies("search_cat", $('#search_form #category').val());
     Cookies("search_city", $('#search_form #city').val());
     Cookies("search_radius", $('#search_form #radius').val());
-  })   
+  })
+  // Show buttons when a post is hovered
+  // And hide it when mouse leave
+  $('.one-post').hover(
+    function(){
+      $(this).find('.post-buttons').show();
+    },
+    function(){
+      $(this).find('.post-buttons').hide();
+    }
+  )
 })
 

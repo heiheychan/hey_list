@@ -1,5 +1,6 @@
-<%= form_tag posts_path, method: :get, :id => "search_form" do %>
-  <p>
+<div class="search">
+  <%= form_tag posts_path, method: :get, :id => "search_form" do %>
+    <input name="utf8" type="hidden" value="&#x2713;" />
     <%= text_field_tag :keyword, "", :placeholder => "Keyword" %>
     <select name="category" id="category">
       <option selected="selected" value="All">All</option>
@@ -10,5 +11,5 @@
     <%= text_field_tag :city, cookies[:search_city] || "", :placeholder => "City" %>
     <%= number_field_tag :radius, cookies[:search_radius] || 20, :placeholder => "Radius" %>
     <%= submit_tag "Search Posts", id: "posts_search" %>
-  </p>
-<% end %>
+  <% end %>
+</div>

@@ -145,12 +145,18 @@
               border-right: 1.2px solid grey;
             }
             .edit-post {
-              background-color: skyblue;
+              background-color: #87CEEB;
               display: inline-block;
+              &:hover {
+                background-color: #45b3e0;
+              }
             }
             .delete-post {
               background-color: #F08080;
               display: inline-block;
+              &:hover {
+                background-color: #e83c3c;
+              }
             }
           }
         }

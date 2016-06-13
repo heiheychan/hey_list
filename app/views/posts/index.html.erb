@@ -3,12 +3,15 @@
     <div class="nav clearfix">
       <a href="#" class="logo">hey!List</a>
       <nav>
-        <a href="<%= new_post_path %>"><span class="glyphicon glyphicon-plus-sign"></span>Create Post</a>
-        <%= link_to "Log in", new_user_session_path %>
-        <%= link_to "Sign up",
-          new_user_registration_path %>
-        <%= link_to "Log out",
-          destroy_user_session_path, :method => :delete %>
+        <% if current_user %>
+          <a href="<%= new_post_path %>"><span class="glyphicon glyphicon-plus-sign"></span>Create Post</a>
+          <%= link_to "Log out",
+            destroy_user_session_path, :method => :delete %>
+        <% else %>
+          <%= link_to "Log in", login_path %>
+          <%= link_to "Sign up",
+            signup_path %>
+        <% end %>
       </nav>
     </div>
     <div class="main-text">

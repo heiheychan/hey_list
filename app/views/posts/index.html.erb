@@ -5,8 +5,20 @@
       <nav>
         <% if current_user %>
           <a href="<%= new_post_path %>"><span class="glyphicon glyphicon-plus-sign"></span>Create Post</a>
-          <%= link_to "Log out",
-            destroy_user_session_path, :method => :delete %>
+          <div class="dropdown">
+            <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" data-target="#" aria-expanded="false">
+              <%= current_user.username %>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dLabel">
+              <li><%= link_to "Profile", profile_path %></li>
+              <li><%= link_to "Update Profile", edit_user_registration_path %></li>
+              <li>
+                <%= link_to "Log out",
+                destroy_user_session_path, :method => :delete %>
+              </li>
+            </ul>
+          </div>
         <% else %>
           <%= link_to "Log in", login_path %>
           <%= link_to "Sign up",

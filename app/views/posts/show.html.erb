@@ -15,7 +15,9 @@
 <%= @post.latitude %>
 <%= @post.longitude %>
 <%= @post.user.id %>
-<%= image_tag(@post.photo.url) %>
+<% @post.images.each do |i| %>
+  <%= image_tag(i.url) %>
+<% end %>
 <%= link_to "Edit Page", edit_post_path(@post) %>
 
 <%= render(:partial => "share/comment_form") %>

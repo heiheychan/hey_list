@@ -18,7 +18,7 @@ gem 'js_cookie_rails'
 gem 'pygments.rb'
 gem 'redcarpet'
 # Image
-gem 'carrierwave'
+gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 
 
 group :development, :test do

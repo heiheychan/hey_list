@@ -14,7 +14,7 @@
 <%= f.label :address %>
 <%= f.text_field :address %>
 <%= f.label :content %>
-<%= f.label :photo %>
-<%= f.file_field :photo %>
+<%= f.label :images %>
+<%= f.file_field :images, multiple: true %>
 <%= f.text_area :content, :rows => 30, :cols => 80 %>
 <%= f.submit %>

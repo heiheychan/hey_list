@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  serialize :images, Array
   has_many :comments
   belongs_to :user
   validates :title, presence: true, 
@@ -14,5 +15,5 @@ class Post < ActiveRecord::Base
   geocoded_by :address
   after_validation :geocode, :if => :address_changed?
 
-  mount_uploader :photo, PhotoUploader
+  mount_uploaders :images, PhotoUploader
 end

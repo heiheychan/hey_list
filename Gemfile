@@ -17,6 +17,8 @@ gem 'geocoder'
 gem 'js_cookie_rails'
 gem 'pygments.rb'
 gem 'redcarpet'
+# Image
+gem 'carrierwave'
 
 
 group :development, :test do

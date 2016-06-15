@@ -10,7 +10,9 @@ Rails.application.routes.draw do
   end
 
   get 'profile', to: 'profile#index'
-  resources "posts"
+  resources "posts"  do
+    resources :images, :only => [:create, :destroy]
+  end
   # For Generating Sub-Category
   resources :categories do
     member do

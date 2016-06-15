@@ -9,7 +9,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.build(post_params)
+    @post = current_user.posts.build(post_params) 
+    puts post_params[:images].length
     if !(params[:post][:category].empty?)
       @post[:category] = Category.find(params[:post][:category]).name
     end
@@ -21,7 +22,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.find_by_id(params[:id])
     @comment = current_user.comments.build
   end
 

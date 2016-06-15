@@ -7,6 +7,7 @@ class CreatePosts < ActiveRecord::Migration
       t.integer "visit", default: 0, null: false
       t.string "title"
       t.text "content"
+      t.text "images", array: true
       t.timestamps null: false
     end
   end

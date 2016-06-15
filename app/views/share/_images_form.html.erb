@@ -1,0 +1,12 @@
+<%= f.file_field :images, multiple: true %>
+<%= f.submit "Add More Images" %>
+
+<div>
+  <% @post.images.each_with_index do |img, index| %>
+    <%= image_tag img.url %>
+    <p>
+      <%= index %>
+    </p>
+    <%= link_to "Delete", post_image_path(@post, index), :method => :delete, data: { confirm: "Are you sure you want to delete this image?" } %>
+  <% end %>
+</div>

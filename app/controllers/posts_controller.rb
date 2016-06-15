@@ -10,7 +10,6 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params) 
-    puts post_params[:images].length
     if !(params[:post][:category].empty?)
       @post[:category] = Category.find(params[:post][:category]).name
     end

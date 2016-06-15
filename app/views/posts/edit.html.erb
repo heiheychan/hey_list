@@ -1,11 +1,24 @@
-<h1>Edit a post</h1>
-<%= form_for @post, url: post_images_path(@post), method: :post do |f| %>
-  <%= render partial: "share/images_form", locals: {
-    :f => f} %>
-<% end %>
-<%= form_for @post do |f| %>
-  <% if @post.errors.any? %>
-    <%= render partial: "share/post_form_error" %>
-  <% end %>
-  <%= render partial: "share/post_form", locals: {:f => f} %>
-<% end %>
+<div class="edit-post">
+  <section class="up">
+    <%= render partial: "share/nav" %>
+  </section>
+  <section class="main">
+    <div class="edit-text clearfix">
+      <div>
+        <h1>Edit a post</h1>
+        <p>Edit your advertisement here :)</p>
+      </div>
+    </div>
+    <%= form_for @post, url: post_images_path(@post), method: :post, html: {:class => "clearfix img-form"} do |f| %>
+      <%= render partial: "share/images_form", locals: {
+        :f => f} %>
+    <% end %>
+    <hr>
+    <%= form_for @post do |f| %>
+      <% if @post.errors.any? %>
+        <%= render partial: "share/post_form_error" %>
+      <% end %>
+      <%= render partial: "share/post_form", locals: {:f => f} %>
+    <% end %>
+  </section>
+</div>

@@ -21,4 +21,36 @@
       }
     }
   }
+  .create-post {
+    section.main {
+      padding: 3% 5%;
+      form {
+        input#post_title {
+          width: 100%;
+        }
+        select#category_id {
+          width: 45%;
+        }
+        div#subcategories_select {
+          width: 45%;
+        }
+        input#post_price {
+          margin-bottom: 10px;
+        }
+        label[for="post_address"] {
+          display: block;
+          margin-left: 0;
+        }
+        input#post_address {
+          display: inline-block
+        }
+        textarea {
+          width: 100%;
+        }
+      }
+    }
+  }
+  .edit-post {
+
+  }
 }

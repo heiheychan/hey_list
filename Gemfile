@@ -19,6 +19,7 @@ gem 'pygments.rb'
 gem 'redcarpet'
 # Image
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
+gem 'mini_magick'
 
 
 group :development, :test do

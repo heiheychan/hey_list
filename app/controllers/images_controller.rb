@@ -29,8 +29,6 @@ class ImagesController < ApplicationController
   def remove_image_at_index(index)
     remain_images = @post.images # copy the array
     deleted_image = remain_images.delete_at(index) # delete the target image
-    print remain_images
-    puts ""
     deleted_image.try(:remove!) # delete image from S3
     if @post.images.empty?
       @post.update_attributes(:images => nil)

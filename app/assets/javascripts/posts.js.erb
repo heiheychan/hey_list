@@ -36,6 +36,36 @@ $(document).ready(function(){
       $(this).find('h3').css("text-decoration","none");
     }
   )
+  // Hide Price Text field when 'hide price?' is 
+  // checked
+  hide_price_val = $(this).prop('checked');
+  if (hide_price_val == "true") {
+    $('label[for="post_price"]').hide();
+    $('input#post_price').hide();
+  } else {
+    $('label[for="post_price"]').show();
+    $('input#post_price').show();
+  }
 
+  $("#post_price_hide").change(function(){
+    hide_price_val = $(this).prop('checked');
+    if (hide_price_val == true) {
+      $('label[for="post_price"]').hide(200);
+      $('input#post_price').hide(200);
+    } else {
+      $('label[for="post_price"]').show(200);
+      $('input#post_price').show(200);
+    }
+  })
+  // Disable Add Images Button when there
+  // are no files
+  $(".img-form input[type='submit']").prop("disabled",true)
+  $("#post_images").change(function(){
+    if($(".img-form #post_images").val() == ""){
+      $(".img-form input[type='submit']").prop("disabled",true)
+    } else {
+      $(".img-form input[type='submit']").prop("disabled",false)
+    }
+  })
 })
 

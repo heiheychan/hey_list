@@ -12,8 +12,8 @@
 <%= f.text_field :price %>
 <%= f.label :address %>
 <%= f.text_field :address, :placeholder => "e.g. New York" %>
-<p class="img">Upload Images (Max: 5)</p>
 <% unless @post.title != "" && @post.title != nil %>
+  <p class="img">Upload Images (Max: 5)</p>
   <%= f.file_field :images, multiple: true %>
 <% end %>
 <%= f.label :content %>

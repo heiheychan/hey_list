@@ -1,5 +1,4 @@
 <h1>Edit a post</h1>
-<%= @post.images.length %>
 <%= form_for @post, url: post_images_path(@post), method: :post do |f| %>
   <%= render partial: "share/images_form", locals: {
     :f => f} %>

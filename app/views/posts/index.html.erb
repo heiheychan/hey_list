@@ -1,7 +1,7 @@
 <div class="posts-index">
   <section class="up">
     <div class="nav clearfix">
-      <a href="#" class="logo">hey!List</a>
+      <%= link_to "hey!List", root_path, :class => "logo" %>
       <nav>
         <% if current_user %>
           <a href="<%= new_post_path %>"><span class="glyphicon glyphicon-plus-sign"></span>Create Post</a>

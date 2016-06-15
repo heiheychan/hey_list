@@ -1,7 +1,20 @@
-<h1>Create a post</h1>
-<%= form_for @post do |f| %>
-  <% if @post.errors.any? %>
-    <%= render partial: "share/post_form_error" %>
-  <% end %>
-  <%= render partial: "share/post_form", locals: {:f => f} %>
-<% end %>
+<div class="create-post">
+  <section class="up">
+    <%= render partial: "share/nav" %>
+  </section>
+  <section class="main">
+    <div class="create-text clearfix">
+      <div>
+        <h1>Create a post</h1>
+        <p>Post your advertisement here for free!</p>
+      </div>
+    </div>
+    <%= form_for @post do |f| %>
+      <% if @post.errors.any? %>
+        <%= render partial: "share/post_form_error" %>
+      <% end %>
+      <%= render partial: "share/post_form", locals: {:f => f} %>
+    <% end %>
+  </section>
+</div>
+

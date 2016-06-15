@@ -1,21 +1,23 @@
-<%= f.label :title %>
-<%= f.text_field :title %>
-<%= f.label :category %>
+<%= f.text_field :title, :placeholder => "e.g. Selling Econ 401 textbook)" %>
 <%= f.collection_select :category, Category.all, :id, :name, preselect_category(@post), id: "category_id" %>
 <div id="subcategories_select">
   <% if @post.sub_category != "" %>
     <%= f.collection_select :sub_category, Category.find_by_name(@post.category).sub_categories, :name, :name %>
   <% end %>
 </div>
+<div class="clearfix"></div>
 <%= f.label :price_hide, "Hide Price?" %>
 <%= f.check_box :price_hide, {}, true, false %>
 <%= f.label :price %>
 <%= f.text_field :price %>
 <%= f.label :address %>
-<%= f.text_field :address %>
-<%= f.label :content %>
+<%= f.text_field :address, :placeholder => "e.g. New York" %>
+<p class="img">Upload Images (Max: 5)</p>
 <% unless @post.title != "" && @post.title != nil %>
   <%= f.file_field :images, multiple: true %>
 <% end %>
+<%= f.label :content %>
 <%= f.text_area :content, :rows => 30, :cols => 80 %>
-<%= f.submit %>
+<div class="clearfix submit">
+  <%= f.submit %>
+</div>

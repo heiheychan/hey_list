@@ -187,3 +187,192 @@
     }
   }
 }
+/* For Create Post Page */
+.create-post {
+  section.up {
+    color: white;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 0.8%;
+    background-color: $background;
+    .logo {
+      float: left;
+    }
+    .nav {
+      padding-top: 10px;
+      .logo {
+        float: left;
+        padding: 5px 10px 5px 10px;
+        border: 2px solid white;
+      }
+      nav {
+        float: right;
+        a {
+          padding: 5px;
+          display: inline-block;
+          margin-left: 10px;
+          &:hover { 
+            color: $background;
+            background-color: white;
+            border-radius: 3px;
+          }
+          span {
+            display: inline-block;
+            margin-right: 2px;
+          }
+        }
+        .dropdown {
+          display: inline-block;
+          button {
+            outline: none;
+            padding: 6px 10px;
+            border-radius: 8px;
+            margin-left: 5px;
+            background-color: white;
+            color: $background;
+            border: 1px solid lightgrey;
+            .caret {
+              margin-left: 10px;
+            }
+          }
+          ul {
+            margin-top: 0;
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+    .main-text {
+      padding-left: 10%;
+      padding-right: 10%;
+      padding-top: 50px;
+      box-sizing: border-box;
+      h1, p {
+        text-align: center;
+      }
+    }
+  }
+  section.main {
+    padding: 3% 10%;
+    .create-text {
+      div {
+        float: left;
+        h1 {
+          font-size: 2.5em;
+          margin-bottom: 10px;
+          font-weight: 600;
+        }
+        p {
+          color: $fade;
+          margin-bottom: 10px;
+        }
+      }
+      input {
+        float: right;
+        margin-right: 20%;
+        margin-top: 1%;
+        width: 18%;
+        height: 45px;
+        background-color: #9ACD32;
+        color: white;
+        border: 1px solid grey;
+        border-radius: 5px;
+        &:hover {
+          background-color: #6c9023;
+        }
+      }
+    }
+    form {
+      padding: 5px;
+      padding-top: 20px;
+      input#post_title {
+        width: 80%;
+        border-radius: 8px;
+        border: 1px solid grey;
+        display: block;
+        height: 2.5em;
+        padding-left: 8px;
+        margin-bottom: 15px;
+      }
+      select#category_id {
+        display: inline-block;
+        width: 20%;
+        margin-bottom: 15px;
+      }
+      div#subcategories_select {
+        display: inline-block;
+        width: 20%;
+        select {
+          width: 100%;
+          margin-bottom: 15px;
+          margin-left: 10px;
+        }
+      }
+      label[for="post_price_hide"] {
+        display: inline-block;
+      }
+      input#post_price_hide {
+        display: inline-block;
+      }
+      label[for="post_price"] {
+        margin-left: 20px;
+      }
+      input#post_price {
+        height: 2.3em;
+        border-radius: 8px;
+        border: 1px solid grey;
+        padding-left: 8px;
+        margin-bottom: 15px;
+      }
+      label[for="post_address"] {
+        margin-left: 20px;
+      }
+      input#post_address {
+        height: 2.3em;
+        border-radius: 8px;
+        border: 1px solid grey;
+        padding-left: 8px;
+        margin-bottom: 15px;
+      }
+      input#post_images {
+        width: 80%;
+        margin-bottom: 10px;
+        font-size: 0.8em;
+        margin-bottom: 15px;
+      }
+      p.img {
+        margin-bottom: 10px;
+        color: grey;
+      }
+      label[for="post_content"] {
+        display: block;
+        margin-bottom: 10px;
+        color: grey;
+        font-weight: normal;
+      }
+      textarea {
+        width: 80%;
+        border-radius: 8px;
+        font-size: 2em;
+        height: 600px;
+        margin-bottom: 10px;
+      }
+      div.submit {
+        width: 80%;
+        input[type="submit"] {
+          display: block;
+          float: left;
+          width: 18%;
+          height: 45px;
+          background-color: #9ACD32;
+          color: white;
+          border: 1px solid grey;
+          border-radius: 5px;
+          &:hover {
+            background-color: #6c9023;
+          }
+        }
+      }
+    }
+  }
+}

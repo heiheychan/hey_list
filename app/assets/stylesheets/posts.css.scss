@@ -344,7 +344,7 @@
       textarea {
         width: 80%;
         border-radius: 8px;
-        font-size: 2em;
+        font-size: 1.2em;
         height: 600px;
         margin-bottom: 10px;
       }
@@ -571,7 +571,7 @@
       textarea {
         width: 80%;
         border-radius: 8px;
-        font-size: 2em;
+        font-size: 1.2em;
         height: 600px;
         margin-bottom: 10px;
       }
@@ -591,6 +591,257 @@
           }
         }
       }
+    }
+  }
+}
+/* For Post Show Page */
+.show-post {
+  section.up {
+    color: white;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 0.8%;
+    background-color: $background;
+    .logo {
+      float: left;
+    }
+    .nav {
+      padding-top: 10px;
+      .logo {
+        float: left;
+        padding: 5px 10px 5px 10px;
+        border: 2px solid white;
+      }
+      nav {
+        float: right;
+        a {
+          padding: 5px;
+          display: inline-block;
+          margin-left: 10px;
+          &:hover { 
+            color: $background;
+            background-color: white;
+            border-radius: 3px;
+          }
+          span {
+            display: inline-block;
+            margin-right: 2px;
+          }
+        }
+        .dropdown {
+          display: inline-block;
+          button {
+            outline: none;
+            padding: 6px 10px;
+            border-radius: 8px;
+            margin-left: 5px;
+            background-color: white;
+            color: $background;
+            border: 1px solid lightgrey;
+            .caret {
+              margin-left: 10px;
+            }
+          }
+          ul {
+            margin-top: 0;
+            margin-left: 5px;
+          }
+        }
+      }
+    }
+  }
+  section.main {
+    padding: 3% 10%;
+    .top {
+      width: 100%;
+      margin-bottom: 30px;
+      .back {
+        float: left;
+        color: #00BFFF;
+        font-size: 1.3em;
+        &:hover {
+          color: #0086b3;
+          cursor: pointer;
+        }
+      }
+      .edit {
+        color: white;
+        float: right;
+        padding: 5px 10px;
+        background-color: #87CEEB;
+        border-radius: 5px;
+        font-size: 1.3em;
+        &:hover {
+          background-color: #45b3e0;
+        }
+      }
+    }
+    .left {
+      box-sizing: border-box;
+      width: 74%;
+      display: inline-block;
+      vertical-align: top;
+      .main-wrapper {
+        padding: 3%;
+        border: 1px solid $fade;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        .cat-group {
+          margin-bottom: 6px;
+          .cat, .sub-cat {
+            float: left;
+          }
+          .cat {
+            color: $fade;
+          }
+          span {
+            display: inline-block;
+            margin-left: 8px;
+          }
+        }
+        .title-group {
+          margin-bottom: 6px;
+          .title {
+            float: left;
+            font-size: 2.3em;
+          }
+          .price {
+            float: right;
+            font-size: 2.3em;
+          }
+        }
+        .address-group {
+          margin-bottom: 15px;
+          p, .address, .created_at {
+            font-size: 0.8em;
+            float: left;
+          }
+        }
+        .content {
+          .text {
+            color: grey;
+            padding: 0;
+            text-align: left;
+            margin-bottom: 10px;
+            display: block;
+          }
+          .core {
+            width: 100%;
+            p, h1, h2, h3, h4, h5, h6 {
+              margin-bottom: 25px;
+            }
+          }
+        }
+      }
+      .map-wrapper {
+        width: 100%;
+        height: 350px;
+        background-color: grey;
+        margin-bottom: 15px;
+        border: 1px solid $fade;
+        border-radius: 8px;
+      }
+      .comment-wrapper {
+        width: 100%;
+        padding: 3%;
+        border: 1px solid $fade;
+        border-radius: 8px;
+        #new_comment {
+          padding: 10px 0;
+          label {
+            display: block;
+          }
+          input[type="text"] {
+            width: 70%;
+            height: 70px;
+            display: inline-block;
+            margin-bottom: 10px;
+          }
+          input[type="submit"] {
+            margin-bottom: 10px;
+            display: inline-block;
+            background-color: #9ACD32;
+            color: white;
+            border: 1px solid grey;
+            border-radius: 3px;
+            width: 20%;
+            height: 30px;
+            vertical-align: bottom;
+            &:hover {
+              background-color: #6c9023;
+            }
+          }
+        }
+        .text {
+          color: grey;
+        }
+        .one-comment {
+          width: 80%;
+          padding: 5%;
+          padding-right: 0;
+          border-bottom: 1px solid $fade;
+          border-radius: 3px;
+          .top {
+            margin-bottom: 10px;
+            p {
+              float: left;
+              width: 80%;
+            }
+            a {
+              float: right;
+              padding: 5px 15px;
+              background-color: #F08080;
+              color: white;
+              border-radius: 5px;
+              &:hover {
+                background-color: #e83c3c;
+              }
+            }
+          }
+          .bottom {
+            font-size: 0.8em;
+            color: grey;
+            span {
+              font-size: 1em;
+              color: black;
+            }
+          }
+        }
+      }
+    }
+    .right {
+      margin: 0;
+      margin-left: 1%;
+      box-sizing: border-box;
+      display: inline-block;
+      width: 24%;
+      .post-owner {
+        margin: 0;
+        border: 1px solid $fade;
+        border-radius: 5px;
+        padding: 10%;
+        width: 100%;
+        margin-bottom: 10px;
+        .text {
+          color: $fade;
+          margin-bottom: 6px;
+        }
+        .username {
+          margin-bottom: 10px;
+          font-weight: bolder;
+          margin-bottom: 20px;
+        }
+        li {
+          list-style: none;
+          margin-bottom: 8px;
+          font-size: 0.8em;
+          color: grey;
+          span {
+            font-size: 1.3em;
+            color: black;
+          }
+        }
+      } 
     }
   }
 }

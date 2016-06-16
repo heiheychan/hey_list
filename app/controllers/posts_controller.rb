@@ -22,7 +22,9 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find_by_id(params[:id])
-    @comment = current_user.comments.build
+    if current_user
+      @comment = current_user.comments.build
+    end
   end
 
   def destroy

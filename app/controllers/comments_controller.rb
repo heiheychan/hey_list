@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     c[:user_id] = current_user.id
     c[:post_id] = params[:id]
     if c.save
-      redirect_to post_path(params[:id])
+      redirect_to post_path(params[:id]) + '#comment-section'
     else
       render post_path(params[:id])
     end
@@ -13,7 +13,7 @@ class CommentsController < ApplicationController
   def destroy
     c = Comment.find(params[:id])
     if c.destroy
-      redirect_to post_path(c.post)
+      redirect_to post_path(c.post) + '#comment-section'
     else
       render post_path(c.post)
     end

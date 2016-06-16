@@ -12,7 +12,7 @@
         ><%= c.name %></option>
       <% end %>
     </select>
-    <%= text_field_tag :city, cookies[:search_city] || "", :placeholder => "City" %>
+    <%= text_field_tag :city, cookies[:search_city] || request.location.city, :placeholder => "City" %>
     <%= number_field_tag :radius, cookies[:search_radius] || 20, :placeholder => "Radius" %>
     <%= submit_tag "Search Posts", id: "posts_search" %>
   <% end %>

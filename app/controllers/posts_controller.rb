@@ -55,10 +55,14 @@ class PostsController < ApplicationController
   private
   def get_search_results
     posts = Post.all
-    posts = posts.near(cookies[:search_city], cookies[:search_radius].to_i).order("distance") if !(cookies[:search_city].blank?)
-    posts = posts.where("title like ?","%#{params[:keyword]}%") if params[:keyword].present?
-    if !(cookies[:search_cat].blank?) && cookies[:search_cat] != "All"
-      posts = posts.where("category like ?", "%#{cookies[:search_cat]}%") 
+    if cookies[:search_cat].blank?
+      posts = posts.near(request.location.city, 20).order("distance")
+    else
+      posts = posts.near(cookies[:search_city], cookies[:search_radius].to_i).order("distance") if !(cookies[:search_city].blank?)
+      posts = posts.where("title like ?","%#{params[:keyword]}%") if params[:keyword].present?
+      if !(cookies[:search_cat].blank?) && cookies[:search_cat] != "All"
+        posts = posts.where("category like ?", "%#{cookies[:search_cat]}%") 
+      end
     end
     return posts.order("created_at DESC")
   end

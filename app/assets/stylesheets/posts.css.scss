@@ -325,11 +325,46 @@
         padding-left: 8px;
         margin-bottom: 15px;
       }
-      input#post_images {
-        width: 80%;
+      .file-input-wrapper {
+        height: 32px;
+        width: 10%;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        /*Using a background color, but you can use a background image to represent a button*/
+        background-color: white;
+        border: 1px solid $fade;
+        border-radius: 3px;
+        text-align: center;
+        vertical-align: middle;
+        box-sizing: border-box;
+        padding-top: 4px;
         margin-bottom: 10px;
-        font-size: 0.8em;
-        margin-bottom: 15px;
+        &:hover {
+          border: 1px solid black;
+        }
+      }
+      .name-preview {
+        padding-left: 5px;
+        li {
+          list-style: none;
+          i {
+            display: inline-block;
+            margin-right: 5px;
+          }
+        }
+      }
+      #post_images {
+        cursor: pointer;
+        height: 100%;
+        position:absolute;
+        top: 0;
+        right: 0;
+        z-index: 99;
+        /*This makes the button huge. If you want a bigger button, increase the font size*/
+        font-size:50px;
+        /*Opacity settings for all browsers*/
+        opacity: 0;
       }
       p.img {
         margin-bottom: 10px;
@@ -552,11 +587,46 @@
         padding-left: 8px;
         margin-bottom: 15px;
       }
-      input#post_images {
-        width: 80%;
+      .file-input-wrapper {
+        height: 32px;
+        width: 10%;
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+        /*Using a background color, but you can use a background image to represent a button*/
+        background-color: white;
+        border: 1px solid $fade;
+        border-radius: 3px;
+        text-align: center;
+        vertical-align: middle;
+        box-sizing: border-box;
+        padding-top: 4px;
         margin-bottom: 10px;
-        font-size: 0.8em;
-        margin-bottom: 15px;
+        &:hover {
+          border: 1px solid black;
+        }
+      }
+      #post_images {
+        cursor: pointer;
+        height: 100%;
+        position:absolute;
+        top: 0;
+        right: 0;
+        z-index: 99;
+        /*This makes the button huge. If you want a bigger button, increase the font size*/
+        font-size:50px;
+        /*Opacity settings for all browsers*/
+        opacity: 0;
+      }
+      .name-preview {
+        padding-left: 5px;
+        li {
+          list-style: none;
+          i {
+            display: inline-block;
+            margin-right: 5px;
+          }
+        }
       }
       p.img {
         margin-bottom: 10px;

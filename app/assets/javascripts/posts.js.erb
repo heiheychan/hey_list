@@ -67,5 +67,22 @@ $(document).ready(function(){
       $(".img-form input[type='submit']").prop("disabled",false)
     }
   })
+  // Show file name preview
+  $("#post_images").change(function(e){
+    var st = "<ul class=\"name-preview\">";
+    var file = $("#post_images")[0].files;
+    console.log(file.length);
+    for (i = 0; i < file.length; i++) {
+      st += "<li>";
+      st += "<i class=\"glyphicon glyphicon-file\"></i>";
+      st += file[i].name;
+      st += " (";
+      st += Math.round(file[i].size/1024/1024*100) / 100;
+      st += "MB)";
+      st += "</li>"
+    }
+    st += "</ul>";
+    $(".name-preview").replaceWith(st);
+  })
 })
 

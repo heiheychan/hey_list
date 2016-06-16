@@ -23,7 +23,7 @@ module ApplicationHelper
     }
     Redcarpet::Markdown.new(renderer, options).render(content).html_safe
   end
-  # Verify authorization
+  # Verify authorization for CRUD
   def auth(c)
     user_signed_in? && (current_user == c.user || current_user.admin != 0)
   end

@@ -14,7 +14,11 @@
 <%= f.text_field :address, :placeholder => "e.g. New York" %>
 <% unless @post.title != "" && @post.title != nil %>
   <p class="img">Upload Images (Max: 5)</p>
-  <%= f.file_field :images, multiple: true %>
+  <div class="file-input-wrapper">
+    <i class="glyphicon glyphicon-plus"></i>  
+    <%= f.file_field :images, multiple: true %>
+  </div>
+  <div class="name-preview"></div>
 <% end %>
 <%= f.label :content %>
 <%= f.text_area :content, :rows => 30, :cols => 80 %>

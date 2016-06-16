@@ -1,5 +1,9 @@
-<%= f.file_field :images, multiple: true %>
-<%= f.submit "Add Images" %>
+<div class="file-input-wrapper">
+  <i class="glyphicon glyphicon-plus"></i>  
+  <%= f.file_field :images, multiple: true %>
+</div>
+<div class="name-preview"></div>
+<%= f.submit "Upload Images" %>
 
 <div class="uploaded_images">
   <% @post.images.each_with_index do |img, index| %>

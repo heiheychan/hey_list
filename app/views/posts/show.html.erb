@@ -5,7 +5,9 @@
     <section class="main">
       <div class="top clearfix">
         <%= link_to "< Back", posts_path, class: "back" %>
-        <%= link_to "Edit Page", edit_post_path(@post), class: "edit" %>
+        <% if auth(@post) %>
+          <%= link_to "Edit Page", edit_post_path(@post), class: "edit" %>
+        <% end %>
       </div>
       <div class="left">
         <div class="main-wrapper">
@@ -49,7 +51,9 @@
             <div class="one-comment">
               <div class="top clearfix">
                 <p class="content"><%= c.content %></p>
-                <%= link_to "Delete", comment_path(c), method: :delete %>
+                <% if auth(c) %>
+                  <%= link_to "Delete", comment_path(c), method: :delete %>
+                <% end %>
               </div>
               <div class="bottom">
                 By
@@ -80,6 +84,7 @@
   </div>
 
 
+<!-- TODO -->
 <% @post.images.each do |i| %>
   been here! suppose to appear twice
   <%= image_tag(i.url) %>

@@ -59,10 +59,12 @@
                 <span class="create-at"><%= user_timezone(p.created_at).strftime("%b %e, %l:%M %p") %></span>
               </p>
             </div>
-            <div class="post-buttons" style="display: none">
-              <%= link_to "Edit", edit_post_path(p), :class => "edit-post" %>
-              <%= link_to "Delete", post_path(p), :method => :delete, :data => {:confirm => "Are you sure?"}, :class => "delete-post" %>
-            </div>
+            <% if auth(p) %>
+              <div class="post-buttons" style="display: none">
+                <%= link_to "Edit", edit_post_path(p), :class => "edit-post" %>
+                <%= link_to "Delete", post_path(p), :method => :delete, :data => {:confirm => "Are you sure?"}, :class => "delete-post" %>
+              </div>
+            <% end %>
           </a>
         </div>
       <% end %>

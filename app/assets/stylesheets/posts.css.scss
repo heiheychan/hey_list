@@ -1,5 +1,5 @@
 /* For Posts Index Page */
-.posts-index {
+#posts-index-page {
   section.up {
     color: white;
     padding-left: 10%;
@@ -188,61 +188,8 @@
   }
 }
 /* For Create Post Page */
-.create-post {
-  section.up {
-    color: white;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 0.8%;
-    background-color: $background;
-    .logo {
-      float: left;
-    }
-    .nav {
-      padding-top: 10px;
-      .logo {
-        float: left;
-        padding: 5px 10px 5px 10px;
-        border: 2px solid white;
-      }
-      nav {
-        float: right;
-        a {
-          padding: 5px;
-          display: inline-block;
-          margin-left: 10px;
-          &:hover { 
-            color: $background;
-            background-color: white;
-            border-radius: 3px;
-          }
-          span {
-            display: inline-block;
-            margin-right: 2px;
-          }
-        }
-        .dropdown {
-          display: inline-block;
-          button {
-            outline: none;
-            padding: 6px 10px;
-            border-radius: 8px;
-            margin-left: 5px;
-            background-color: white;
-            color: $background;
-            border: 1px solid lightgrey;
-            .caret {
-              margin-left: 10px;
-            }
-          }
-          ul {
-            margin-top: 0;
-            margin-left: 5px;
-          }
-        }
-      }
-    }
-  }
+#create-post-page {
+  @import "share/nav-style";
   section.main {
     padding: 3% 10%;
     .create-text {
@@ -403,61 +350,8 @@
   }
 }
 /* For edit post Page */
-.edit-post {
-  section.up {
-    color: white;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 0.8%;
-    background-color: $background;
-    .logo {
-      float: left;
-    }
-    .nav {
-      padding-top: 10px;
-      .logo {
-        float: left;
-        padding: 5px 10px 5px 10px;
-        border: 2px solid white;
-      }
-      nav {
-        float: right;
-        a {
-          padding: 5px;
-          display: inline-block;
-          margin-left: 10px;
-          &:hover { 
-            color: $background;
-            background-color: white;
-            border-radius: 3px;
-          }
-          span {
-            display: inline-block;
-            margin-right: 2px;
-          }
-        }
-        .dropdown {
-          display: inline-block;
-          button {
-            outline: none;
-            padding: 6px 10px;
-            border-radius: 8px;
-            margin-left: 5px;
-            background-color: white;
-            color: $background;
-            border: 1px solid lightgrey;
-            .caret {
-              margin-left: 10px;
-            }
-          }
-          ul {
-            margin-top: 0;
-            margin-left: 5px;
-          }
-        }
-      }
-    }
-  }
+#edit-post-page {
+  @import "share/nav-style";
   section.main {
     padding: 3% 10%;
     .edit-text {
@@ -666,61 +560,8 @@
   }
 }
 /* For Post Show Page */
-.show-post {
-  section.up {
-    color: white;
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-bottom: 0.8%;
-    background-color: $background;
-    .logo {
-      float: left;
-    }
-    .nav {
-      padding-top: 10px;
-      .logo {
-        float: left;
-        padding: 5px 10px 5px 10px;
-        border: 2px solid white;
-      }
-      nav {
-        float: right;
-        a {
-          padding: 5px;
-          display: inline-block;
-          margin-left: 10px;
-          &:hover { 
-            color: $background;
-            background-color: white;
-            border-radius: 3px;
-          }
-          span {
-            display: inline-block;
-            margin-right: 2px;
-          }
-        }
-        .dropdown {
-          display: inline-block;
-          button {
-            outline: none;
-            padding: 6px 10px;
-            border-radius: 8px;
-            margin-left: 5px;
-            background-color: white;
-            color: $background;
-            border: 1px solid lightgrey;
-            .caret {
-              margin-left: 10px;
-            }
-          }
-          ul {
-            margin-top: 0;
-            margin-left: 5px;
-          }
-        }
-      }
-    }
-  }
+#show-post-page {
+  @import "share/nav-style";
   section.main {
     padding: 3% 10%;
     .top {
@@ -792,7 +633,7 @@
           width: 100%;
           height: 180px;
           overflow: scroll;
-          margin-bottom: 20px;
+          margin-bottom: 25px;
           .img-wrapper {
             height: 180px;
             button {
@@ -819,7 +660,7 @@
           }
           .core {
             width: 100%;
-            @import "markdown-fix"
+            @import "share/markdown-fix";
           }
         }
       }
@@ -919,14 +760,14 @@
         .username {
           margin-bottom: 20px;
         }
-        li {
-          list-style: none;
-          margin-bottom: 8px;
-          font-size: 0.8em;
-          color: grey;
-          span {
-            font-size: 1.3em;
-            color: black;
+        table {
+          tr {
+            margin-bottom: 8px;
+          }
+          th {
+            color: grey;
+            font-weight: normal;
+            padding-right: 15px;
           }
         }
       } 

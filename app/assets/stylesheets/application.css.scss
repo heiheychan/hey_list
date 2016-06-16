@@ -50,7 +50,7 @@ a {
 .clearfix { display: block; }
 /* close commented backslash hack */
 
-@import "pygments";
+@import "share/pygments";
 @import "posts";
 @import "users";
 @import "media-query";

@@ -1,4 +1,4 @@
-<div class="show-post">
+<div id="show-post-page">
     <section class="up">
       <%= render partial: "share/nav" %>
     </section>
@@ -32,6 +32,7 @@
             <p>&nbsp;&#183;</p>
             <p class="created_at"><%= user_timezone(@post.created_at).strftime("%b %e, %l:%M %p") %></p>
           </div>
+          <% if @post.images.present? %>
           <div class="img-wrapper-wrapper">
             <div class="img-wrapper clearfix" style="width: <%= @post.images.length * 220 %>px">
               <% counter = 0 %>
@@ -51,6 +52,7 @@
               <% counter = 0 %>
             </div>
           </div>
+          <% end %>
           <div class="content">
             <p class="text">Content</p>
             <div class="core">
@@ -89,11 +91,20 @@
         <div class="post-owner">
           <p class="text">Poster</p>
           <h2 class="username"><%= @post.user.username %></h2>
-          <ul>
-            <li>WeChat: <span class="wechat"><%= @post.user.wechat %></span></li>
-            <li>Email: <span class="email"><%= @post.user.contact_email %></span></li>
-            <li>Phone#: <span class="wechat"><%= @post.user.phone %></span></li>
-          </ul>
+          <table>
+            <tr>
+              <th>WeChat</th>
+              <td><%= @post.user.wechat %></td>
+            </tr>
+            <tr>
+              <th>Email</th>
+              <td><%= @post.user.contact_email %></td>
+            </tr>
+            <tr>
+              <th>Phone#</th>
+              <td><%= @post.user.phone %></td>
+            </tr>
+          </table>
         </div>
         <div class="google-ad">
           <img src="http://fpoimg.com/300x600">

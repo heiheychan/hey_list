@@ -1,3 +1,54 @@
+#sign-up-page {
+  @import "share/nav-style";
+  section.main {
+    padding: 3% 35%;
+    h1 {
+      font-size: 3em;
+      font-weight: 500;
+    }
+    p {
+      color: $fade;
+      margin-bottom: 10px;
+    }
+    .form-wrapper {
+      label {
+        margin-bottom: 5px;
+      }
+      input {
+        width: 100%;
+        height: 40px;
+        margin-bottom: 10px;
+      }
+      input[type="submit"] {
+        background-color: #9ACD32;
+        color: white;
+        border: 1px solid grey;
+        border-radius: 5px;
+        &:hover {
+          background-color: #6c9023;
+        }
+      }
+      .devise-share {
+        a {
+          color: #00BFFF;
+          font-size: 1em;
+          &:hover {
+            color: #0086b3;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+/* Notice when user signed in and logged out */
 .devise-notice,
 .devise-alert {
   position: absolute;

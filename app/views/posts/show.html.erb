@@ -4,7 +4,7 @@
     </section>
     <section class="main">
       <div class="top clearfix">
-        <%= link_to "< Back", posts_path, class: "back" %>
+        <%= link_to "Back", posts_path, class: "back" %>
         <% if auth(@post) %>
           <%= link_to "Edit Page", edit_post_path(@post), class: "edit" %>
         <% end %>
@@ -31,6 +31,25 @@
             <p class="address"><%= @post.address %></p>
             <p>&nbsp;&#183;</p>
             <p class="created_at"><%= user_timezone(@post.created_at).strftime("%b %e, %l:%M %p") %></p>
+          </div>
+          <div class="img-wrapper-wrapper">
+            <div class="img-wrapper clearfix" style="width: <%= @post.images.length * 220 %>px">
+              <% counter = 0 %>
+              <% @post.images.each do |i| %>
+                <button data-toggle="modal" data-target=".<%= counter.to_s + "_image" %>">
+                  <img src="<%= i.small.url %>">
+                </button>
+                  <div class="modal core fade <%= counter.to_s + "_image" %>" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                    <div class="modal-dialog modal-sm">
+                      <div class="modal-content">
+                        <%= image_tag(i.medium.url) %>
+                      </div>
+                    </div>
+                  </div>
+                  <% counter += 1 %>
+              <% end %>
+              <% counter = 0 %>
+            </div>
           </div>
           <div class="content">
             <p class="text">Content</p>
@@ -85,10 +104,7 @@
 
 
 <!-- TODO -->
-<% @post.images.each do |i| %>
-  been here! suppose to appear twice
-  <%= image_tag(i.url) %>
-<% end %>
+
 
 
 

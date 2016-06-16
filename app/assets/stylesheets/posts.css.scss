@@ -524,6 +524,7 @@
             border-radius: 5px;
             color: white;
             margin-top: 2px;
+            margin-bottom: 20px;
             text-decoration: none;
             &:hover {
               background-color: #e83c3c;
@@ -781,10 +782,31 @@
           }
         }
         .address-group {
-          margin-bottom: 15px;
+          margin-bottom: 20px;
           p, .address, .created_at {
             font-size: 0.8em;
             float: left;
+          }
+        }
+        .img-wrapper-wrapper {
+          width: 100%;
+          height: 180px;
+          overflow: scroll;
+          margin-bottom: 20px;
+          .img-wrapper {
+            height: 180px;
+            button {
+              float: left;
+              margin-right: 10px;
+            }
+            .modal.core {
+              padding-left: 32%;
+              padding-top: 10%;
+              .modal-dialog{
+                margin: 0;
+                text-align: center;
+              }
+            }
           }
         }
         .content {
@@ -797,9 +819,7 @@
           }
           .core {
             width: 100%;
-            p, h1, h2, h3, h4, h5, h6 {
-              margin-bottom: 25px;
-            }
+            @import "markdown-fix"
           }
         }
       }
@@ -897,8 +917,6 @@
           margin-bottom: 6px;
         }
         .username {
-          margin-bottom: 10px;
-          font-weight: bolder;
           margin-bottom: 20px;
         }
         li {

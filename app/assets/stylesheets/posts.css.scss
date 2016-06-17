@@ -582,22 +582,14 @@
     .top {
       width: 100%;
       margin-bottom: 30px;
-      .back {
-        float: left;
-        color: #00BFFF;
-        font-size: 1.3em;
-        &:hover {
-          color: #0086b3;
-          cursor: pointer;
-        }
-      }
       .edit {
         color: white;
         float: right;
-        padding: 5px 10px;
+        padding: 5px 12px;
         background-color: #87CEEB;
         border-radius: 5px;
-        font-size: 1.3em;
+        font-size: 1em;
+        width: 8%;
         &:hover {
           background-color: #45b3e0;
         }
@@ -777,7 +769,7 @@
         }
         table {
           tr {
-            margin-bottom: 8px;
+            border-bottom: 1px solid $fade;
           }
           th {
             color: grey;

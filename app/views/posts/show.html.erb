@@ -4,7 +4,6 @@
     </section>
     <section class="main">
       <div class="top clearfix">
-        <%= link_to "Back", posts_path, class: "back" %>
         <% if auth(@post) %>
           <%= link_to "Edit Page", edit_post_path(@post), class: "edit" %>
         <% end %>

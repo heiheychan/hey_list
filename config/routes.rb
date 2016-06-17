@@ -24,5 +24,6 @@ Rails.application.routes.draw do
   end
   # Error handling
   get 'error', to: 'static_pages#error'
+  get 'about_us', to: 'static_pages#about_us'
   match "*missing" => redirect("/error"), via: :get
 end

@@ -1,5 +1,5 @@
-<p>Welcome <%= @email %>!</p>
+<p>歡迎加入我們！ <%= @email %>!</p>
 
-<p>You can confirm your account email through the link below:</p>
+<p>為了確保你的電郵是正確的，請按以下連接激活你hey!list的帳號：</p>
 
-<p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %></p>
+<p><%= link_to '激活帳戶', confirmation_url(@resource, confirmation_token: @token) %></p>

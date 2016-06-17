@@ -79,7 +79,7 @@
                 By
                 <span class="poster"><%= c.user.username %></span>
                 @
-                <span class="time"><%= c.created_at.strftime("%b %e, %l:%M %p") %></span>
+                <span class="time"><%= user_timezone(c.created_at).strftime("%b %e, %l:%M %p") %></span>
               </div>
             </div>
           <% end %>

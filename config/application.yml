@@ -1,6 +1,0 @@
-AWS_ACCESS_KEY_ID: "AKIAJSK7KWFDBGIJ6ZTA"
-AWS_SECRET_ACCESS_KEY: "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"
-development:
-  AWS_BUCKET: heylist-development
-production:
-  AWS_BUCKET: heylist-production

@@ -557,6 +557,21 @@
         }
       }
     }
+    a.delete-post {
+      background-color: #F08080;
+      color: white;
+      border: 1px solid grey;
+      border-radius: 5px;
+      width: 14.2%;
+      margin-left: 0.5%;
+      height: 42px;
+      padding-top: 8px;
+      text-align: center;
+      display: block;
+      &:hover {
+        background-color: #e83c3c;
+      }
+    }
   }
 }
 /* For Post Show Page */

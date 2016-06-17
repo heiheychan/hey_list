@@ -22,4 +22,7 @@ Rails.application.routes.draw do
       resources :comments, only: [:create, :destroy]
     end
   end
+  # Error handling
+  get 'error', to: 'static_pages#error'
+  match "*missing" => redirect("/error"), via: :get
 end

@@ -9,6 +9,7 @@
         <p>Post your advertisement here for free!</p>
       </div>
     </div>
+    <% @post.address = request.location.city %>
     <%= form_for @post do |f| %>
       <% if @post.errors.any? %>
         <%= render partial: "share/post_form_error" %>

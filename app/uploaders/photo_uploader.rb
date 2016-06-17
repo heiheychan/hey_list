@@ -5,15 +5,17 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
   def clear_uploader
     @file = @filename = @original_filename = @cache_id = @version = @storage = nil
-    model.send(:write_attribute, mounted_as, nil)
+    if !model.frozen?
+      model.send(:write_attribute, :images, nil)
+    end
   end
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
   include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  storage :file
-  # storage :fog
+  # storage :file
+  storage :fog
 
   # Override the directory where uploaded files will be stored.
   # This is a sensible default for uploaders that are meant to be mounted:

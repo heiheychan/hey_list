@@ -21,6 +21,8 @@ gem 'redcarpet'
 # Image
 gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
+gem "fog-aws"
+gem 'figaro'
 
 
 group :development, :test do

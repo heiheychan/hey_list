@@ -19,6 +19,7 @@
         <%= render partial: "share/post_form_error" %>
       <% end %>
       <%= render partial: "share/post_form", locals: {:f => f} %>
+      <%= link_to "Delete Post", post_path(@post), method: :delete, class: "delete-post" %>
     <% end %>
   </section>
 </div>

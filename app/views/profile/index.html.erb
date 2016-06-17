@@ -1,43 +1,57 @@
-<h1>My Profile</h1>
-<table>
-  <tr>
-    <th>Username</th>
-    <td><%= current_user.username %></td>
-  </tr>
-  <tr>
-    <th>School</th>
-    <td><%= current_user.school %></td>
-  </tr>
-  <tr>
-    <th>Major</th>
-    <td><%= current_user.major %></td>
-  </tr>
-  <tr>
-    <th>Year of Class</th>
-    <td><%= current_user.year_of_class %></td>
-  </tr>
-  <tr>
-    <th>Bio</th>
-    <td><%= current_user.bio %></td>
-  </tr>
-  <tr>
-    <th>Admin Status</th>
-    <td><%= current_user.admin %></td>
-  </tr>
-  <tr>
-    <th>WeChat</th>
-    <td><%= current_user.wechat %></td>
-  </tr>
-  <tr>
-    <th>Phone</th>
-    <td><%= current_user.phone %></td>
-  </tr>
-  <tr>
-    <th>Contact Email</th>
-    <td><%= current_user.contact_email %></td>
-  </tr>
-</table>
-
-<div>
-  <%= link_to "Home Page", root_path %>
+<div id="profile-page">
+  <section class="up">
+    <%= render partial: "share/nav" %>
+  </section>
+  <section class="main">
+    <div class="username-group clearfix">
+      <h1><%= current_user.username %></h1>
+      <%= link_to "Update Profile", edit_user_registration_path %>
+    </div>
+      <table>
+        <tr>
+          <th>
+            School:
+          </th>
+          <td>
+            <%= current_user.school != "" ? current_user.school : "empty" %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Year of:
+          </th>
+          <td>
+            <%= current_user.year_of_class != nil ? current_user.year_of_class : "empty" %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Major:
+          </th>
+          <td>
+            <%= current_user.major != "" ? current_user.major : "empty" %>
+          </td>
+        </tr>
+        <tr>
+          <th>
+            Bio:
+          </th>
+          <td>
+            <%= current_user.bio != "" ? markdown(current_user.bio) : "empty" %>
+          </td>
+        </tr>
+        <tr>
+          <th>WeChat</th>
+          <td><%= current_user.wechat != "" ? current_user.wechat : "empty" %></td>
+        </tr>
+        <tr>
+          <th>Phone</th>
+          <td><%= current_user.phone != "" ? current_user.phone : "empty" %></td>
+        </tr>
+        <tr>
+          <th>Contact Email</th>
+          <td><%= current_user.contact_email != "" ? current_user.contact_email : "empty" %></td>
+        </tr>
+      </table>
+  </section>
 </div>

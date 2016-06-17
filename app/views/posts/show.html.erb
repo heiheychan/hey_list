@@ -94,15 +94,15 @@
           <table>
             <tr>
               <th>WeChat</th>
-              <td><%= @post.user.wechat %></td>
+              <td><%= @post.user.wechat != "" ? @post.user.wechat : "empty" %></td>
+            </tr>
+            <tr>
+              <th>Phone</th>
+              <td><%= @post.user.phone != "" ? @post.user.phone : "empty" %></td>
             </tr>
             <tr>
               <th>Email</th>
-              <td><%= @post.user.contact_email %></td>
-            </tr>
-            <tr>
-              <th>Phone#</th>
-              <td><%= @post.user.phone %></td>
+              <td><%= @post.user.contact_email != "" ? @post.user.contact_email : "empty" %></td>
             </tr>
           </table>
         </div>
@@ -112,13 +112,3 @@
       </div>
     </section>
   </div>
-
-
-<!-- TODO -->
-
-
-
-
-
-
-

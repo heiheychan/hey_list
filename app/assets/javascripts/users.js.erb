@@ -4,4 +4,6 @@ $(document).ready(function(){
     $(".devise-notice").hide()
     $(".devise-alert").hide()
   }, 3000)
+  // Italic all empty string
+  $("td:contains('empty')").css("font-style", "Italic").css("color", "#cecece");
 })

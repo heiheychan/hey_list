@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   root "posts#index"
   # Devise Users and user-related pages
   devise_for :users, controllers: {
-    sessions: 'users/sessions'
+    sessions: 'users/sessions',
+    registrations: 'users/registrations'
   }
   devise_scope :user do
     get 'login', to: 'users/sessions#new'

@@ -1,79 +1,64 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<div id="update-profile-page">
+  <section class="up">
+    <%= render partial: "share/nav" %>
+  </section>
+  <section class="main">
+    <h1>Edit <%= resource_name.to_s.humanize %></h1>
+    <p>Here you can edit your login info, and update your contact so other users can get in touch with you!</p>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+      <%= devise_error_messages! %>
+      <div class="top-wrapper clearfix">
+        <div class="left">
+          <%= f.label :email %>
+          <%= f.email_field :email, autofocus: true %>
+          <%= f.label :username %>
+          <%= f.text_field :username %>
+          <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+            <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+          <% end %>
+          <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+          <%= f.password_field :password, autocomplete: "off" %>
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, autocomplete: "off" %>
+        </div>
+        <div class="right">
+          <%= f.label :school %>
+          <%= f.text_field :school, :placeholder => "University of Michigan" %>
+          <%= f.label :major %>
+          <%= f.text_field :major, :placeholder => "Economics" %>
+          <%= f.label :year_of_class %>
+          <%= f.text_field :year_of_class, :placeholder => "2016" %>
+          <%= f.label :bio %>
+          <%= f.text_area :bio, :placeholder => "I love drinking so much. And sleep." %>
+          <hr>
+          <h3>Contact</h3>
+          <p>Let other users know how to contact you! The contact information here will be visible to other users!</p>
+          <%= f.label :wechat %>
+          <%= f.text_field :wechat, :placeholder => "billyc123"%>
+          <%= f.label :contact_email %>
+          <%= f.text_field :contact_email, :placeholder => "billyc@gmail.com"%>
+          <%= f.label :phone %>
+          <%= f.text_field :phone, :placeholder => "734-123-1234" %>
+        </div>
+      </div>
+      <hr>
+      <div class="bottom">
+        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+        <%= f.password_field :current_password, autocomplete: "off" %>
+        <%= f.submit "Update" %>
+      </div>
+    <% end %>
+    <div class="delete-user">
+      <h3>Cancel my account</h3>
+      <p>We are sad to see you go! If you decide to leave us, you can delete your account by clicking the button below :(</p>
+      <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+    </div>
+  </section>
+</div>
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= devise_error_messages! %>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
-  </div>
 
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
 
-  <div class="field">
-    <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :username %><br />
-    <%= f.text_field :username %>
-  </div>
 
-  <div class="field">
-    <%= f.label :school %><br />
-    <%= f.text_field :school %>
-  </div>
-
-  <div class="field">
-    <%= f.label :major %><br />
-    <%= f.text_field :major %>
-  </div>
-
-  <div class="field">
-    <%= f.label :year_of_class %><br />
-    <%= f.text_field :year_of_class %>
-  </div>
-
-  <div class="field">
-    <%= f.label :bio %><br />
-    <%= f.text_area :bio %>
-  </div>
-
-   <div class="field">
-    <%= f.label :wechat %><br />
-    <%= f.text_field :wechat %>
-  </div>
-
-   <div class="field">
-    <%= f.label :phone %><br />
-    <%= f.text_field :phone %>
-  </div>
-
-   <div class="field">
-    <%= f.label :contact_email %><br />
-    <%= f.text_field :contact_email %>
-  </div>
-
-  <div class="field">
-    <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-
-<h3>Cancel my account</h3>
-
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
-
-<%= link_to "Back", :back %>

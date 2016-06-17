@@ -1,9 +1,9 @@
 <div class="search">
   <%= form_tag posts_path, method: :get, :id => "search_form" do %>
     <input name="utf8" type="hidden" value="&#x2713;" />
-    <%= text_field_tag :keyword, "", :placeholder => "Keyword", :class => "search_keyword" %>
-    <select name="category" id="category">
-      <option  value="All">All</option>
+    <%= text_field_tag :keyword, "", :placeholder => "關鍵字", :class => "search_keyword" %>
+    <select name="分類" id="category">
+      <option  value="All">全部</option>
       <% Category.all.each do |c| %>
         <option value="<%= c.name %>" 
           <% if cookies[:search_cat] == c.name %>
@@ -12,8 +12,8 @@
         ><%= c.name %></option>
       <% end %>
     </select>
-    <%= text_field_tag :city, cookies[:search_city] || request.location.city, :placeholder => "City" %>
-    <%= number_field_tag :radius, cookies[:search_radius] || 20, :placeholder => "Radius" %>
-    <%= submit_tag "Search Posts", id: "posts_search" %>
+    <%= text_field_tag :city, cookies[:search_city] || request.location.city, :placeholder => "所在地" %>
+    <%= number_field_tag :radius, cookies[:search_radius] || 20, :placeholder => "半俓範圍（Mile）" %>
+    <%= submit_tag "搜尋", id: "posts_search" %>
   <% end %>
 </div>

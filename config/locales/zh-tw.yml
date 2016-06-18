@@ -63,11 +63,11 @@ zh-TW:
         y_o_c_label: "畢業年份"
         bio_label: "關於自己"
         textarea_ph: "我喜歡吃和睡。"
-        contacts: "聯係方法"
+        contacts: "聯繫方法"
         contacts_text: "這是其他用戶聯係你的途徑。請起碼填上一個聯係方法。"
         wechat: "微信"
         phone_no: "電話號碼"
-        c_email: "聯係電郵"
+        c_email: "聯繫電郵"
         c_pw: "現在的密碼"
         update_notice: "(我們需要你現在的密碼去確認你的資料更新)"
         cancel_acct: "取消帳號"
@@ -91,7 +91,7 @@ zh-TW:
       bio: "關於自己"
       wechat: "微信"
       phone_no: "電話號碼"
-      c_email: "聯係電郵"
+      c_email: "聯繫電郵"
       empty: "空蕩蕩"
 
 

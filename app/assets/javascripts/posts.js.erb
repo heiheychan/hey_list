@@ -8,7 +8,7 @@ $(document).ready(function(){
         url: "/categories/" + v + "/get_subcategories.js",
         type: "GET",
         dataType: "script",
-        data: {"category_id": v}
+        data: {}
       })
     } else {
       $('#subcategories_select').html("");

@@ -3,13 +3,13 @@
   <%= f.file_field :images, multiple: true %>
 </div>
 <div class="name-preview"></div>
-<%= f.submit "上傳圖片" %>
+<%= f.submit t("share.img.upload_img") %>
 
 <div class="uploaded_images">
   <% @post.images.each_with_index do |img, index| %>
     <div class="one_image">
       <%= image_tag img.small.url %>
-      <%= link_to "刪除", post_image_path(@post, index), :method => :delete, data: { confirm: "Are you sure you want to delete this image?" } %> 
+      <%= link_to t("share.img.delete"), post_image_path(@post, index), :method => :delete, data: { confirm: t("share.img.r_u_sure") } %> 
     </div>
   <% end %>
 </div>

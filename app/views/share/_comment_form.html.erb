@@ -1,5 +1,5 @@
 <%= form_for @comment do |f| %>
-  <%= f.label :content, "請留言" %>
+  <%= f.label :content, t("share.comment.leave_comment") %>
   <%= f.text_field :content %>
-  <%= f.submit "發布" %>
+  <%= f.submit t("share.comment.submit") %>
 <% end %>

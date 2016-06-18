@@ -1,23 +1,102 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  layout:
+    title: "Classified for International Students"
+  posts:
+    index:
+      about_us_path: "About hey!List"
+      create_ads: "Post Ads"
+      my_acct: "My Account"
+      update_acct: "Update Account"
+      sign_up: "Sign Up"
+      sign_in: "Login"
+      sign_out: "Logout"
+      main_text_h1: "Welcome to hey!List"
+      main_text_small: "classified for International Students"
+      main_text_intro: "You can trade staff, find roommates, sublease your apartment here!"
+      post-buttons:
+        edit: "Edit"
+        delete: "Delete"
+        r_u_sure: "Are you sure?"
+    edit:
+      update_post: "Edit"
+      intro: "Edit your ads to make it looks more attractive:)"
+      delete: "Delete Ads"
+    new:
+      create_post: "Create Ads"
+      intro: "Post an Ads for free, letting friends and others see!"
+    show:
+      update: "Edit"
+      current_location: "Current location"
+      created_at: "Created at"
+      content: "Content"
+      map: "Map"
+      comment: "Comment"
+      poster: "Poster"
+      wechat: "WeChat"
+      phone_no: "Phone#"
+      email: "Email"
+  devise:
+    reg:
+      new:
+        register: "Sign Up"
+        sign_here: "Please sign up here!"
+        email_label: "Email"
+        email_notice: "The account activation email will be sent to this email"
+        username_label: "Username"
+        pw_label: "Password"
+        pw_notice_1: "At least has"
+        pw_notice_2: "characters"
+        reenter_pw: "Repeat password"
+      edit:
+        edit_h1: "Edit Profile"
+        edit_p: "Edit your profile here：）"
+        lack_contact: "*Please at least fill in one way to contact you."
+        email_label: "Email"
+        username_label: "Username"
+        pw_label: "Password"
+        pw_notice: "(If you don't need to change it, please leave it blank)"
+        reenter_pw: "Repeat password"
+        school_label: "School"
+        school_ph: "University of Michigan"
+        major_label: "Major"
+        major_ph: "Economics"
+        y_o_c_label: "Graduation Year"
+        bio_label: "About Me"
+        textarea_ph: "I love eating and sleeping."
+        contacts: "Contacts"
+        contacts_text: "Other users will contact you through the means below"
+        wechat: "WeChat"
+        phone_no: "Phone#"
+        c_email: "Contact Email"
+        c_pw: "Current Password"
+        update_notice: "(We need your email to confirm update)"
+        cancel_acct: "Delete Account"
+        cancel_acct_t: "We are sad to see you leave. If you really want to leave us, then good luck :("
+        cancel_btn: "Delete Account"
+        r_u_sure: "Are you sure?"
+        update_btn: "Update Profile"
+    ses:
+      new:
+        login: "Login"
+        login_text: "Please login here!"
+        email_label: "Email"
+        pw_label: "Password"
+        rem_me: "Remember me"
+  profile:
+    index:
+      edit: "Edit Profile"
+      school: "School"
+      y_o_c: "Graduation Year"
+      major: "Major"
+      bio: "About Me"
+      wechat: "WeChat"
+      phone_no: "Phone#"
+      c_email: "Contact Email"
+      empty: "Empty"
+
+
+
+
+
+
+

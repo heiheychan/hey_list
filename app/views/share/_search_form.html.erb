@@ -1,10 +1,10 @@
 <div class="search">
   <%= form_tag posts_path, method: :get, :id => "search_form" do %>
     <input name="utf8" type="hidden" value="&#x2713;" />
-    <%= text_field_tag :keyword, "", :placeholder => "關鍵字", :class => "search_keyword" %>
-    <label>分類</label>
-    <select name="分類" id="category">
-      <option  value="All">全部</option>
+    <%= text_field_tag :keyword, "", :placeholder => t("share.search.keyword_ph"), :class => "search_keyword" %>
+    <label><%= t("share.search.cat_label") %></label>
+    <select name="<%= t("share.search.cat_label") %>" id="category">
+      <option value="All"><%= t("share.search.default_cat") %></option>
       <% Category.all.each do |c| %>
         <option value="<%= c.name %>" 
           <% if cookies[:search_cat] == c.name %>
@@ -13,9 +13,9 @@
         ><%= c.name %></option>
       <% end %>
     </select>
-    <%= text_field_tag :city, cookies[:search_city] || request.location.city, :placeholder => "所在地" %>
-    <label>半俓範圍</label>
-    <%= number_field_tag :radius, cookies[:search_radius] || 20, :placeholder => "半俓範圍（Mile）" %>
-    <%= submit_tag "搜尋", id: "posts_search" %>
+    <%= text_field_tag :city, cookies[:search_city] || request.location.city, :placeholder => t("share.search.address_ph") %>
+    <label><%= t("share.search.radius_label") %></label>
+    <%= number_field_tag :radius, cookies[:search_radius] || 20, :placeholder => t("share.search.radius_ph") %>
+    <%= submit_tag t("share.search.submit_btn"), id: "posts_search" %>
   <% end %>
 </div>

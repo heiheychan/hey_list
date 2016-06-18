@@ -5,8 +5,8 @@
   <section class="main">
     <div class="edit-text clearfix">
       <div>
-        <h1>編輯廣告</h1>
-        <p>在這裡編輯廣告。讓他更吸引！:)</p>
+        <h1><%= t(".update_post") %></h1>
+        <p><%= t(".intro") %></p>
       </div>
     </div>
     <%= form_for @post, url: post_images_path(@post), method: :post, html: {:class => "clearfix img-form"} do |f| %>
@@ -20,6 +20,6 @@
       <% end %>
       <%= render partial: "share/post_form", locals: {:f => f} %>
     <% end %>
-    <%= link_to "刪除廣告", post_path(@post), method: :delete, class: "delete-post" %>
+    <%= link_to t(".delete"), post_path(@post), method: :delete, class: "delete-post" %>
   </section>
 </div>

@@ -5,7 +5,7 @@
     <section class="main">
       <div class="top clearfix">
         <% if auth(@post) %>
-          <%= link_to "編輯", edit_post_path(@post), class: "edit" %>
+          <%= link_to t(".update"), edit_post_path(@post), class: "edit" %>
         <% end %>
       </div>
       <div class="left">
@@ -27,10 +27,10 @@
             </h1>
           </div>
           <div class="address-group clearfix">
-            <span>所在地</span>
+            <span><%= t(".current_location") %></span>
             <p class="address"><%= @post.address %></p>
             <p>&nbsp;&#183;</p>
-            <span>發布時間</span>
+            <span><%= t(".created_at") %></span>
             <p class="created_at"><%= user_timezone(@post.created_at).strftime("%b %e, %l:%M %p") %></p>
           </div>
           <% if @post.images.present? %>
@@ -55,21 +55,21 @@
           </div>
           <% end %>
           <div class="content">
-            <p class="text">內容</p>
+            <p class="text"><%= t(".content") %></p>
             <div class="core">
              <%= markdown(@post.content) %>
             </div>
           </div>
         </div>
         <div class="map-wrapper">
-          <p>地圖</p>
+          <p><%= t(".map") %></p>
           <iframe width="100%" height="91%" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/place?q=<%= @post.latitude %>,<%= @post.longitude %>&amp;key=AIzaSyBm7SRVgQ-_xrbIVn07LDXu7wpcys_Sqtw"></iframe>
         </div>
         <div class="comment-wrapper" id="comment-section">
           <% if current_user %>
             <%= render(:partial => "share/comment_form") %>
           <% end %>
-          <p class="text"><%= @post.comments.count %>留言</p>
+          <p class="text"><%= @post.comments.count %><%= t(".comment") %></p>
           <% @post.comments.order("created_at DESC").each do |c| %>
             <div class="one-comment">
               <div class="top clearfix">
@@ -90,19 +90,19 @@
       </div>
       <div class="right">
         <div class="post-owner">
-          <p class="text">發佈者</p>
+          <p class="text"><%= t(".poster") %></p>
           <h2 class="username"><%= @post.user.username %></h2>
           <table>
             <tr>
-              <th>微信</th>
+              <th><%= t(".wechat") %></th>
               <td><%= @post.user.wechat != "" ? @post.user.wechat : "empty" %></td>
             </tr>
             <tr>
-              <th>電話號碼</th>
+              <th><%= t(".phone_no") %></th>
               <td><%= @post.user.phone != "" ? @post.user.phone : "empty" %></td>
             </tr>
             <tr>
-              <th>電郵</th>
+              <th><%= t(".email") %></th>
               <td><%= @post.user.contact_email != "" ? @post.user.contact_email : "empty" %></td>
             </tr>
           </table>

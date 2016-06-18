@@ -1,0 +1,45 @@
+en:
+  share:
+    search:
+      keyword_ph: "keyword"
+      cat_label: "Catregory"
+      default_cat: "All"
+      address_ph: "Current City"
+      radius_label: "Radius"
+      radius_ph: "Radius(Mile)"
+      submit_btn: "Search"
+    comment:
+      leave_comment: "Please comment"
+      submit: "Post"
+    img:
+      upload_img: "Upload Image"
+      delete: "Delete"
+      r_u_sure: "Are you sure?"
+    create_post:
+      title_ph: "Selling Econ401 and 402 textbooks"
+      helper: "Pick a Category"
+      price_hide_label: "Hide Price"
+      price_label: "Price"
+      address_label: "Current City"
+      address_ph: "e.g. Ann Arbor"
+      up_img_instruct: "Upload Images(Max:5)"
+      content_label: "Content"
+      submit: "Post"
+    nav:
+      home: "hey!List"
+      about_us: "About hey!List"
+      create: "Post Ads"
+      my_acct: "My Account"
+      update_acct: "Update Account"
+      log_out: "Logout"
+      log_in: "Login"
+      sign_up: "Sign Up"
+    devise_link:
+      log_in: "Login"
+      sign_up: "Sign Up"
+      forget_password: "Forget Password"
+      no_confirm_email: "Not getting confirmation email?"
+      no_unlock_instruct: "Didn't receive to unlock instruction?"
+      omni_1: "Use "
+      omni_2: " to login"
+      

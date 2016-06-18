@@ -3,58 +3,58 @@
     <%= render partial: "share/nav" %>
   </section>
   <section class="main">
-    <h1>編輯用戶</h1>
-    <p>在這裡更改用戶資料：）</p>
+    <h1><%= t("devise.reg.edit.edit_h1") %></h1>
+    <p><%= t("devise.reg.edit.edit_p") %></p>
     <% if contact_lack? %>
-      <p class="lack-contact">*請起碼填上一個聯係方法，讓其他用戶可以聯係你。</p>
+      <p class="lack-contact"><%= t("devise.reg.edit.lack_contact") %></p>
     <% end %>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= devise_error_messages! %>
       <div class="top-wrapper clearfix">
         <div class="left">
-          <%= f.label :email, "電郵" %>
+          <%= f.label :email, t("devise.reg.edit.email_label") %>
           <%= f.email_field :email, autofocus: true %>
-          <%= f.label :username, "用戶名稱" %>
+          <%= f.label :username, t("devise.reg.edit.username_label") %>
           <%= f.text_field :username %>
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
           <% end %>
-          <%= f.label :password, "密碼" %> <i>(如果不需要更改請把他留空)</i><br />
+          <%= f.label :password, t("devise.reg.edit.pw_label") %> <i></i><br />
           <%= f.password_field :password, autocomplete: "off" %>
-          <%= f.label :password_confirmation, "重複密碼" %>
+          <%= f.label :password_confirmation, t("devise.reg.edit.reenter_pw") %>
           <%= f.password_field :password_confirmation, autocomplete: "off" %>
         </div>
         <div class="right">
-          <%= f.label :school, "學校" %>
-          <%= f.text_field :school, :placeholder => "University of Michigan" %>
-          <%= f.label :major, "專業" %>
-          <%= f.text_field :major, :placeholder => "Economics" %>
-          <%= f.label :year_of_class, "畢業年份" %>
+          <%= f.label :school, t("devise.reg.edit.school_label") %>
+          <%= f.text_field :school, :placeholder => t("devise.reg.edit.school_ph") %>
+          <%= f.label :major, t("devise.reg.edit.major_label") %>
+          <%= f.text_field :major, :placeholder => t("devise.reg.edit.major_ph") %>
+          <%= f.label :year_of_class, t("devise.reg.edit.y_o_c_label") %>
           <%= f.text_field :year_of_class, :placeholder => "2016" %>
-          <%= f.label :bio, "關於自己" %>
-          <%= f.text_area :bio, :placeholder => "我喜歡吃和睡。" %>
+          <%= f.label :bio, t("devise.reg.edit.bio_label") %>
+          <%= f.text_area :bio, :placeholder => t("devise.reg.edit.textarea_ph") %>
           <hr>
-          <h3>聯係方法</h3>
-          <p>這是其他用戶聯係你的途徑。請起碼填上一個聯係方法。</p>
-          <%= f.label :wechat, "微信" %>
+          <h3></h3>
+          <p></p>
+          <%= f.label :wechat, t("devise.reg.edit.wechat") %>
           <%= f.text_field :wechat, :placeholder => "billyc123", :class => ("contact-lack" if contact_lack?) %>
-          <%= f.label :contact_email, "聯係電郵" %>
+          <%= f.label :contact_email, t("devise.reg.edit.c_email")%>
           <%= f.text_field :contact_email, :placeholder => current_user.email, :class => ("contact-lack" if contact_lack?) %>
-          <%= f.label :phone, "電話號碼" %>
+          <%= f.label :phone, t("devise.reg.edit.phone_no") %>
           <%= f.text_field :phone, :placeholder => "734-123-1234", :class => ("contact-lack" if contact_lack?) %>
         </div>
       </div>
       <hr>
       <div class="bottom">
-        <%= f.label :current_password, "現在的密碼" %> <i>(我們需要你現在的密碼去確認你的資料更新)</i><br />
+        <%= f.label :current_password, t("devise.reg.edit.c_pw") %> <i><%= t("devise.reg.edit.update_notice") %></i><br />
         <%= f.password_field :current_password, autocomplete: "off" %>
-        <%= f.submit "Update" %>
+        <%= f.submit t("devise.reg.edit.update_btn") %>
       </div>
     <% end %>
     <div class="delete-user">
-      <h3>取消帳號</h3>
-      <p>我們不想看到你離開。但如果你堅持要走的話，有緣再見了:(</p>
-      <%= button_to "取消帳號", registration_path(resource_name), data: { confirm: "你決定嗎?" }, method: :delete %>
+      <h3><%= t("devise.reg.edit.cancel_acct") %></h3>
+      <p><%= t("devise.reg.edit.cancel_acct_t") %></p>
+      <%= button_to t("devise.reg.edit.cancel_btn"), registration_path(resource_name), data: { confirm: t("devise.reg.edit.r_u_sure") }, method: :delete %>
     </div>
   </section>
 </div>

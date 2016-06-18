@@ -1,0 +1,45 @@
+zh-TW:
+  share:
+    search:
+      keyword_ph: "關鍵字"
+      cat_label: "分類"
+      default_cat: "全部"
+      address_ph: "所在地"
+      radius_label: "半俓範圍"
+      radius_ph: "半俓範圍（Mile）"
+      submit_btn: "搜尋"
+    comment:
+      leave_comment: "請留言"
+      submit: "發布"
+    img:
+      upload_img: "上傳圖片"
+      delete: "刪除"
+      r_u_sure: "你確定嗎?"
+    create_post:
+      title_ph: "賣Econ401和402的教科書"
+      helper: "選擇分類"
+      price_hide_label: "隱藏價格"
+      price_label: "價格"
+      address_label: "所在城市"
+      address_ph: "例如：安娜堡"
+      up_img_instruct: "上傳圖片(最多5張)"
+      content_label: "內容"
+      submit: "發佈"
+    nav:
+      home: "hey!List"
+      about_us: "關於hey!List"
+      create: "發布廣告"
+      my_acct: "我的帳戶"
+      update_acct: "更新帳戶"
+      log_out: "登出"
+      log_in: "登入"
+      sign_up: "注冊"
+    devise_link:
+      log_in: "登入"
+      sign_up: "注冊"
+      forget_password: "忘記密碼"
+      no_confirm_email: "沒有收到確認通知?"
+      no_unlock_instruct: "沒有收到開鎖指引?"
+      omni_1: "用 "
+      omni_2: " 登入"
+      

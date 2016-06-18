@@ -1,0 +1,102 @@
+zh-TW:
+  layout:
+    title: "留學生的免費分類廣告"
+  posts:
+    index:
+      about_us_path: "關於hey!List"
+      create_ads: "發布廣告"
+      my_acct: "我的帳戶"
+      update_acct: "更新帳戶"
+      sign_up: "注冊"
+      sign_in: "登入"
+      sign_out: "登出"
+      main_text_h1: "歡迎來到 hey!List"
+      main_text_small: "留學生的免費分類廣告"
+      main_text_intro: "在這裡你可以買賣東西，找室友／旅行伙伴，租房。"
+      post-buttons:
+        edit: "編輯"
+        delete: "刪除"
+        r_u_sure: "你確定嗎?"
+    edit:
+      update_post: "編輯廣告"
+      intro: "在這裡編輯廣告。讓他更吸引！:)"
+      delete: "刪除廣告"
+    new:
+      create_post: "發佈廣告"
+      intro: "免費發佈廣告，讓其他同學、用戶看到！"
+    show:
+      update: "編輯"
+      current_location: "所在地"
+      created_at: "發布時間"
+      content: "內容"
+      map: "地圖"
+      comment: "留言"
+      poster: "發佈者"
+      wechat: "微信"
+      phone_no: "電話號碼"
+      email: "電郵"
+  devise:
+    reg:
+      new:
+        register: "注冊"
+        sign_here: "請在這裡注冊!"
+        email_label: "電郵"
+        email_notice: "（激活帳號連接會發到這個郵箱）"
+        username_label: "用戶名稱"
+        pw_label: "密碼"
+        pw_notice_1: "(最少"
+        pw_notice_2: "個字)"
+        reenter_pw: "重複密碼"
+      edit:
+        edit_h1: "編輯用戶"
+        edit_p: "在這裡更改用戶資料：）"
+        lack_contact: "*請起碼填上一個聯係方法，讓其他用戶可以聯係你。"
+        email_label: "電郵"
+        username_label: "用戶名稱"
+        pw_label: "密碼"
+        pw_notice: "(如果不需要更改請把他留空)"
+        reenter_pw: "重複密碼"
+        school_label: "學校"
+        school_ph: "密歇根大學"
+        major_label: "專業"
+        major_ph: "經濟"
+        y_o_c_label: "畢業年份"
+        bio_label: "關於自己"
+        textarea_ph: "我喜歡吃和睡。"
+        contacts: "聯係方法"
+        contacts_text: "這是其他用戶聯係你的途徑。請起碼填上一個聯係方法。"
+        wechat: "微信"
+        phone_no: "電話號碼"
+        c_email: "聯係電郵"
+        c_pw: "現在的密碼"
+        update_notice: "(我們需要你現在的密碼去確認你的資料更新)"
+        cancel_acct: "取消帳號"
+        cancel_acct_t: "我們不想看到你離開。但如果你堅持要走的話，有緣再見了:("
+        cancel_btn: "取消帳號"
+        r_u_sure: "你確定嗎?"
+        update_btn: "更新用戶"
+    ses:
+      new:
+        login: "登入"
+        login_text: "請在這裡登入。"
+        email_label: "電郵"
+        pw_label: "密碼"
+        rem_me: "記住我"
+  profile:
+    index:
+      edit: "編輯用戶"
+      school: "學校"
+      y_o_c: "畢業年份"
+      major: "專業"
+      bio: "關於自己"
+      wechat: "微信"
+      phone_no: "電話號碼"
+      c_email: "聯係電郵"
+      empty: "空蕩蕩"
+
+
+
+
+
+
+

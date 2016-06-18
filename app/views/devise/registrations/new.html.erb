@@ -3,32 +3,32 @@
     <%= render partial: "share/nav" %>
   </section>
   <section class="main">
-    <h1>注冊</h1>
-    <p>請在這裡注冊!</p>
+    <h1><%= t("devise.reg.new.register") %></h1>
+    <p><%= t("devise.reg.new.sign_here") %></p>
     <div class="form-wrapper">
       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
         <%= devise_error_messages! %>
         <div class="field">
-          <%= f.label :email, "電郵" %><em>（激活帳號連接會發到這個郵箱）</em><br />
+          <%= f.label :email, t("devise.reg.new.email_label") %><em><%= t("devise.reg.new.email_notice") %></em><br />
           <%= f.email_field :email, autofocus: true %>
         </div>
         <div class="username">
-          <%= f.label :username, "用戶名稱" %><br />
+          <%= f.label :username, t("devise.reg.new.username_label") %><br />
           <%= f.text_field :username %>
         </div>
         <div class="field">
-          <%= f.label :password, "密碼" %>
+          <%= f.label :password, t("devise.reg.new.pw_label") %>
           <% if @minimum_password_length %>
-          <em>(最少<%= @minimum_password_length %>個字)</em>
+          <em><%= t("devise.reg.new.pw_notice_1") %><%= @minimum_password_length %><%= t("devise.reg.new.pw_notice_2") %></em>
           <% end %><br />
           <%= f.password_field :password, autocomplete: "off" %>
         </div>
         <div class="field">
-          <%= f.label :password_confirmation, "重複密碼" %><br />
+          <%= f.label :password_confirmation, t("devise.reg.new.reenter_pw") %><br />
           <%= f.password_field :password_confirmation, autocomplete: "off" %>
         </div>
         <div class="actions">
-          <%= f.submit "注冊" %>
+          <%= f.submit t("devise.reg.new.register") %>
         </div>
         <div class="devise-share">
           <%= render "devise/shared/links" %>

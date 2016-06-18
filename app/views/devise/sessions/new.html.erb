@@ -3,19 +3,19 @@
     <%= render partial: "share/nav" %>
   </section>
   <section class="main">
-    <h1>登入</h1>
-    <p>請在這裡登入。</p>
+    <h1><%= t("devise.ses.new.login") %></h1>
+    <p><%= t("devise.ses.new.login_text") %></p>
     <div class="form-wrapper">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-          <%= f.label :email, "電郵" %>
+          <%= f.label :email, t("devise.ses.new.email_label") %>
           <%= f.email_field :email, autofocus: true %>
-          <%= f.label :password, "密碼" %>
+          <%= f.label :password, t("devise.ses.new.pw_label") %>
           <%= f.password_field :password, autocomplete: "off" %>
         <% if devise_mapping.rememberable? -%>
             <%= f.check_box :remember_me, :class => 'rem' %>
-            <%= f.label :remember_me, "記住我", :class => 'rem-label' %>
+            <%= f.label :remember_me, t("devise.ses.new.rem_me"), :class => 'rem-label' %>
         <% end %>
-          <%= f.submit "登入" %>
+          <%= f.submit t("devise.ses.new.login") %>
           <%= render "devise/shared/links" %>
       <% end %>
     </div>

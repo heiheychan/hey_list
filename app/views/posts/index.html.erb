@@ -2,35 +2,38 @@
   <section class="up">
     <div class="nav clearfix">
       <%= link_to "hey!List", root_path, :class => "logo" %>
-      <%= link_to "關於hey!List", about_us_path, :class => "about" %>
+      <%= link_to t(".about_us_path"), about_us_path, :class => "about" %>
       <nav>
         <% if current_user %>
-          <a href="<%= new_post_path %>"><span class="glyphicon glyphicon-plus-sign"></span>發布廣告</a>
+          <a href="<%= new_post_path %>"><span class="glyphicon glyphicon-plus-sign"></span><%= t(".create_ads") %></a>
           <div class="dropdown">
             <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" data-target="#" aria-expanded="false">
               <%= current_user.username %>
               <span class="caret"></span>
             </button>
             <ul class="dropdown-menu" aria-labelledby="dLabel">
-              <li><%= link_to "我的帳戶", profile_path %></li>
-              <li><%= link_to "更新帳戶", edit_user_registration_path %></li>
+              <li><%= link_to t(".my_acct"), profile_path %></li>
+              <li><%= link_to t(".update_acct"), edit_user_registration_path %></li>
               <li>
-                <%= link_to "登出",
+                <%= link_to t(".sign_out"),
                 destroy_user_session_path, :method => :delete %>
               </li>
             </ul>
           </div>
         <% else %>
-          <%= link_to "登入", login_path %>
-          <%= link_to "注冊",
+          <%= link_to t(".sign_in"), login_path %>
+          <%= link_to t(".sign_up"),
             signup_path %>
         <% end %>
+        <nav class="lan-group">
+          <%= link_to_unless_current "ENG", {locale: "en"}, :class => "lan" %>|<%= link_to_unless_current "中文", {locale: "zh-TW"}, :class => "lan" %>
+        </nav>
       </nav>
     </div>
     <div class="main-text">
-      <h1>歡迎來到 hey!List</h1>
-      <p class="small">-留學生的免費分類廣告</p>
-      <p class="intro">在這裡你可以買賣東西，找室友／旅行伙伴，租房。</p>
+      <h1><%= t(".main_text_h1") %></h1>
+      <p class="small"><%= t(".main_text_small") %></p>
+      <p class="intro"><%= t(".main_text_intro") %></p>
     </div>
   </section>
   <section class="main">
@@ -63,8 +66,8 @@
             </div>
             <% if auth(p) %>
               <div class="post-buttons" style="display: none">
-                <%= link_to "編輯", edit_post_path(p), :class => "edit-post" %>
-                <%= link_to "刪除", post_path(p), :method => :delete, :data => {:confirm => "你確定嗎?"}, :class => "delete-post" %>
+                <%= link_to t(".post-buttons.edit"), edit_post_path(p), :class => "edit-post" %>
+                <%= link_to t(".post-buttons.delete"), post_path(p), :method => :delete, :data => {:confirm => t(".post-buttons.r_u_sure")}, :class => "delete-post" %>
               </div>
             <% end %>
           </a>

@@ -6,22 +6,22 @@
   <% end %>
 </div>
 <div class="clearfix"></div>
-<%= f.label :price_hide, "Hide Price?" %>
+<%= f.label :price_hide, "隱藏價格" %>
 <%= f.check_box :price_hide, {}, true, false %>
-<%= f.label :price %>
+<%= f.label :price, "價格" %>
 <%= f.text_field :price %>
-<%= f.label :address %>
-<%= f.text_field :address, :placeholder => "e.g. New York" %>
+<%= f.label :address, "所在城市" %>
+<%= f.text_field :address, :value => (@post.address ||request.location.city), :placeholder => "e.g. New York" %>
 <% unless @post.title != "" && @post.title != nil %>
-  <p class="img">Upload Images (Max: 5)</p>
+  <p class="img">上傳圖片(最多5張)</p>
   <div class="file-input-wrapper">
     <i class="glyphicon glyphicon-plus"></i>  
     <%= f.file_field :images, multiple: true %>
   </div>
   <div class="name-preview"></div>
 <% end %>
-<%= f.label :content %>
+<%= f.label :content, "內容" %>
 <%= f.text_area :content, :rows => 30, :cols => 80 %>
 <div class="clearfix submit">
-  <%= f.submit %>
+  <%= f.submit "發佈" %>
 </div>

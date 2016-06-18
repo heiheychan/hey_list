@@ -3,55 +3,58 @@
     <%= render partial: "share/nav" %>
   </section>
   <section class="main">
-    <h1>Edit <%= resource_name.to_s.humanize %></h1>
-    <p>Here you can edit your login info, and update your contact so other users can get in touch with you!</p>
+    <h1>編輯用戶</h1>
+    <p>在這裡更改用戶資料：）</p>
+    <% if current_user.wechat == "" && current_user.contact_email == "" && current_user.phone == "" %>
+      <p class="lack-contact">*請起碼填上一個聯係方法，讓其他用戶可以聯係你。</p>
+    <% end %>
     <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
       <%= devise_error_messages! %>
       <div class="top-wrapper clearfix">
         <div class="left">
-          <%= f.label :email %>
+          <%= f.label :email, "電郵" %>
           <%= f.email_field :email, autofocus: true %>
-          <%= f.label :username %>
+          <%= f.label :username, "用戶名稱" %>
           <%= f.text_field :username %>
           <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
             <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
           <% end %>
-          <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
+          <%= f.label :password, "密碼" %> <i>(如果不需要更改請把他留空)</i><br />
           <%= f.password_field :password, autocomplete: "off" %>
-          <%= f.label :password_confirmation %>
+          <%= f.label :password_confirmation, "重複密碼" %>
           <%= f.password_field :password_confirmation, autocomplete: "off" %>
         </div>
         <div class="right">
-          <%= f.label :school %>
+          <%= f.label :school, "學校" %>
           <%= f.text_field :school, :placeholder => "University of Michigan" %>
-          <%= f.label :major %>
+          <%= f.label :major, "專業" %>
           <%= f.text_field :major, :placeholder => "Economics" %>
-          <%= f.label :year_of_class %>
+          <%= f.label :year_of_class, "畢業年份" %>
           <%= f.text_field :year_of_class, :placeholder => "2016" %>
-          <%= f.label :bio %>
-          <%= f.text_area :bio, :placeholder => "I love drinking so much. And sleep." %>
+          <%= f.label :bio, "關於自己" %>
+          <%= f.text_area :bio, :placeholder => "我喜歡吃和睡。" %>
           <hr>
-          <h3>Contact</h3>
-          <p>Let other users know how to contact you! The contact information here will be visible to other users!</p>
-          <%= f.label :wechat %>
-          <%= f.text_field :wechat, :placeholder => "billyc123"%>
-          <%= f.label :contact_email %>
-          <%= f.text_field :contact_email, :placeholder => "billyc@gmail.com"%>
-          <%= f.label :phone %>
-          <%= f.text_field :phone, :placeholder => "734-123-1234" %>
+          <h3>聯係方法</h3>
+          <p>這是其他用戶聯係你的途徑。請起碼填上一個聯係方法。</p>
+          <%= f.label :wechat, "微信" %>
+          <%= f.text_field :wechat, :placeholder => "billyc123", :class => ("contact-lack" if current_user.wechat == "" && current_user.contact_email == "" && current_user.phone == "") %>
+          <%= f.label :contact_email, "聯係電郵" %>
+          <%= f.text_field :contact_email, :placeholder => current_user.email, :class => ("contact-lack" if current_user.wechat == "" && current_user.contact_email == "" && current_user.phone == "") %>
+          <%= f.label :phone, "電話號碼" %>
+          <%= f.text_field :phone, :placeholder => "734-123-1234", :class => ("contact-lack" if current_user.wechat == "" && current_user.contact_email == "" && current_user.phone == "") %>
         </div>
       </div>
       <hr>
       <div class="bottom">
-        <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
+        <%= f.label :current_password, "現在的密碼" %> <i>(我們需要你現在的密碼去確認你的資料更新)</i><br />
         <%= f.password_field :current_password, autocomplete: "off" %>
         <%= f.submit "Update" %>
       </div>
     <% end %>
     <div class="delete-user">
-      <h3>Cancel my account</h3>
-      <p>We are sad to see you go! If you decide to leave us, you can delete your account by clicking the button below :(</p>
-      <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+      <h3>取消帳號</h3>
+      <p>我們不想看到你離開。但如果你堅持要走的話，有緣再見了:(</p>
+      <%= button_to "取消帳號", registration_path(resource_name), data: { confirm: "你決定嗎?" }, method: :delete %>
     </div>
   </section>
 </div>

@@ -75,9 +75,6 @@
         color: grey;
         margin-bottom: 5px;
       }
-      p.intro {
-
-      }
     }
   }
   .main {
@@ -97,6 +94,10 @@
         }
         .search_keyword {
           width: 300px;
+        }
+        label {
+          display: inline-block;
+          margin-left: 6px;
         }
         input[type="submit"] {
           background-color: $contrast;

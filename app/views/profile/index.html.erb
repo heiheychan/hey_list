@@ -5,51 +5,43 @@
   <section class="main">
     <div class="username-group clearfix">
       <h1><%= current_user.username %></h1>
-      <%= link_to "Update Profile", edit_user_registration_path %>
+      <%= link_to "編輯用戶", edit_user_registration_path %>
     </div>
       <table>
         <tr>
-          <th>
-            School:
-          </th>
+          <th>學校</th>
           <td>
             <%= current_user.school != "" ? current_user.school : "empty" %>
           </td>
         </tr>
         <tr>
-          <th>
-            Year of:
-          </th>
+          <th>畢業年份</th>
           <td>
             <%= current_user.year_of_class != nil ? current_user.year_of_class : "empty" %>
           </td>
         </tr>
         <tr>
-          <th>
-            Major:
-          </th>
+          <th>專業</th>
           <td>
             <%= current_user.major != "" ? current_user.major : "empty" %>
           </td>
         </tr>
         <tr>
-          <th>
-            Bio:
-          </th>
+          <th>關於自己</th>
           <td>
             <%= current_user.bio != "" ? markdown(current_user.bio) : "empty" %>
           </td>
         </tr>
         <tr>
-          <th>WeChat</th>
+          <th>微信</th>
           <td><%= current_user.wechat != "" ? current_user.wechat : "empty" %></td>
         </tr>
         <tr>
-          <th>Phone</th>
+          <th>電話號碼</th>
           <td><%= current_user.phone != "" ? current_user.phone : "empty" %></td>
         </tr>
         <tr>
-          <th>Contact Email</th>
+          <th>聯係電郵</th>
           <td><%= current_user.contact_email != "" ? current_user.contact_email : "empty" %></td>
         </tr>
       </table>

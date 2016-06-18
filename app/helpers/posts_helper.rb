@@ -4,7 +4,7 @@ module PostsHelper
   def preselect_category(post)
     puts post.category
     if post.category == nil || post.category.empty?
-      { prompt: "Choose a category" }
+      { prompt: "選擇分類" }
     else
       {:selected => Category.find_by_name(@post.category).id}
     end

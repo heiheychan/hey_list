@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 @import "outside_reset";
 
 $background: #69D2E7;
@@ -53,4 +55,5 @@ a {
 @import "share/pygments";
 @import "posts";
 @import "users";
+@import "static_pages";
 @import "media-query";

@@ -1,0 +1,109 @@
+<div id="about-us-page">
+  <section class="up">
+    <div class="nav clearfix">
+      <%= link_to "hey!List", root_path, :class => "logo" %>
+      <%= link_to "關於hey!List", about_us_path, :class => "about" %>
+      <nav>
+        <% if current_user %>
+          <a href="<%= new_post_path %>"><span class="glyphicon glyphicon-plus-sign"></span>發布廣告</a>
+          <div class="dropdown">
+            <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" data-target="#" aria-expanded="false">
+              <%= current_user.username %>
+              <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dLabel">
+              <li><%= link_to "我的帳戶", profile_path %></li>
+              <li><%= link_to "更新帳戶", edit_user_registration_path %></li>
+              <li>
+                <%= link_to "登出",
+                destroy_user_session_path, :method => :delete %>
+              </li>
+            </ul>
+          </div>
+        <% else %>
+          <%= link_to "登入", login_path %>
+          <%= link_to "注冊",
+            signup_path %>
+        <% end %>
+      </nav>
+    </div>
+    <div class="main-text">
+      <h1>歡迎來到 hey!List</h1>
+      <p class="small">-留學生的免費分類廣告</p>
+      <p class="intro">在這裡你可以買賣東西，找室友／旅行伙伴，租房。</p>
+    </div>
+  </section>
+  <section class="main">
+    <div class="intro">
+      <h1>什麼是hey!List?</h1>
+      <h3>What is hey!List?</h3>
+      <p>
+        hey!List是一個為華語國際學生而設的免費分類廣告網站。
+        我們意識到中國為母語的國際學生很少使用主流的分類廣告網站，而會用微信發布廣告。廣告你只能通過你的朋友共享傳播，廣告亦很容易沉底。可見這種方式的低效。hey!List的出現可以令學生能夠更容易地進行交易！
+      </p>
+      <p>
+        hey!List is a free classified advertisement site for Chinese-speaking international students. We realize that these students seldom use main-stream classified site like Craigslist. Instead, they post their advertisement on social media like WeChat. The posts can only be spreaded through their friend's sharing them on their wall, and they are very unorganized. This inefficient way of posting ads is the reason why hey!List is developed. hey!List provides an efficient ways for users to advertise and trade!
+      </p>
+      <hr>
+    </div>
+    <div class="what-to-trade">
+      <h1>在hey!List可以登什麼廣告</h1>
+      <h3>What ads can you post on hey!List?</h3>
+      <ul>
+        <li><span></span>買賣電器 Electronics</li>
+        <li><span></span>。傢俬 Furniture</li>
+        <li><span></span>。車 car</li>
+        <li><span></span>。書 book</li>
+        <li><span></span>。服飾 apparel</li>
+        <li><span></span>找房友 Roommate</li>
+        <li><span></span>。旅遊伙伴 Travel Buddy</li>
+        <li><span></span><del>。炮友 SP</del></li>
+        <li><span></span>租房 Rent</li>
+        <li><span></span>分租 Sub-lease</li>
+      </ul>
+      <hr>
+    </div>
+    <div class="team">
+      <h1>團隊</h1>
+      <h3>Team</h3>
+      <h4>Just Me...</h4>
+      <h2>只有我
+      <%= image_tag "team/team-bill.jpg", size: "70x70" %>
+      <span>Bill Chan (heiheychan)</span></h2>
+      <a class="linkedin" target="_blank" href="https://hk.linkedin.com/in/billchan1">
+        <i class="fa fa-linkedin-square" aria-hidden="true"></i>
+      </a>
+      <a class="github" target="_blank" href="https://github.com/heiheychan">
+        <i class="fa fa-github-square" aria-hidden="true"></i>
+      </a>
+      <a class="facebook" target="_blank" href="https://www.facebook.com/chakhei.chan.54">
+        <i class="fa fa-facebook-square" aria-hidden="true"></i>
+      </a>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  </section>
+</div>

@@ -23,7 +23,8 @@ gem 'carrierwave', github: 'carrierwaveuploader/carrierwave'
 gem 'mini_magick'
 gem "fog-aws"
 gem 'figaro'
-
+# Icons
+gem 'font-awesome-sass'
 
 group :development, :test do
   gem 'byebug'

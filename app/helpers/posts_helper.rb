@@ -20,6 +20,16 @@ module PostsHelper
       return "info"
     when "Book"
       return "warning"
+    when "Study Buddy"
+      return "danger" 
+    when "Electronics"
+      return "primary" 
+    when "Car"
+      return "success" 
+    when "Sublease"
+      return "info"
+    when "Apparel"
+      return "warning"  
     end
   end
 end

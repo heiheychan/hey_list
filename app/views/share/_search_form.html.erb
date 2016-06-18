@@ -14,6 +14,7 @@
       <% end %>
     </select>
     <%= text_field_tag :city, cookies[:search_city] || request.location.city, :placeholder => "所在地" %>
+    <label>半俓範圍</label>
     <%= number_field_tag :radius, cookies[:search_radius] || 20, :placeholder => "半俓範圍（Mile）" %>
     <%= submit_tag "搜尋", id: "posts_search" %>
   <% end %>

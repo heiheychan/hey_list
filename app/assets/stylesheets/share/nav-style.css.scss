@@ -5,8 +5,16 @@
     padding-bottom: 0.8%;
     background-color: $background;
     .logo {
-      float: left;
-    }
+        float: left;
+        padding: 5px 10px 5px 10px;
+        border: 2px solid white;
+      }
+      .about {
+        float: left;
+        margin-top: 5px;
+        padding: 0 10px 5px 10px;
+        margin-left: 15px;
+      }
     .nav {
       padding-top: 10px;
       .logo {

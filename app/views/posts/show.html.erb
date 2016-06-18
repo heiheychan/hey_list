@@ -90,19 +90,19 @@
       </div>
       <div class="right">
         <div class="post-owner">
-          <p class="text">Poster</p>
+          <p class="text">發佈者</p>
           <h2 class="username"><%= @post.user.username %></h2>
           <table>
             <tr>
-              <th>WeChat</th>
+              <th>微信</th>
               <td><%= @post.user.wechat != "" ? @post.user.wechat : "empty" %></td>
             </tr>
             <tr>
-              <th>Phone</th>
+              <th>電話號碼</th>
               <td><%= @post.user.phone != "" ? @post.user.phone : "empty" %></td>
             </tr>
             <tr>
-              <th>Email</th>
+              <th>電郵</th>
               <td><%= @post.user.contact_email != "" ? @post.user.contact_email : "empty" %></td>
             </tr>
           </table>

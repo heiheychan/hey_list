@@ -2,6 +2,7 @@
   <section class="up">
     <div class="nav clearfix">
       <%= link_to "hey!List", root_path, :class => "logo" %>
+      <%= link_to "關於hey!List", about_us_path, :class => "about" %>
       <nav>
         <% if current_user %>
           <a href="<%= new_post_path %>"><span class="glyphicon glyphicon-plus-sign"></span>發布廣告</a>
@@ -29,7 +30,7 @@
     <div class="main-text">
       <h1>歡迎來到 hey!list</h1>
       <p class="small">-留學生的免費分類廣告</p>
-      <p class="intro">在這裡你可以買賣東西，找室友／旅行伙伴,租房。</p>
+      <p class="intro">在這裡你可以買賣東西，找室友／旅行伙伴，租房。</p>
     </div>
   </section>
   <section class="main">

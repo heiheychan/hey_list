@@ -16,9 +16,14 @@
         padding: 5px 10px 5px 10px;
         border: 2px solid white;
       }
+      .about {
+        float: left;
+        margin-top: 5px;
+        padding: 0 10px 5px 10px;
+        margin-left: 15px;
+      }
       nav {
         float: right;
-        padding-top: 6px;
         a {
           padding: 5px;
           display: inline-block;
@@ -592,7 +597,8 @@
       .edit {
         color: white;
         float: right;
-        padding: 5px 12px;
+        padding: 5px;
+        text-align: center;
         background-color: #87CEEB;
         border-radius: 5px;
         font-size: 1em;
@@ -692,10 +698,9 @@
         border-radius: 8px;
         overflow: hidden;
         p {
+          color: grey;
           background-color: white;
-          padding-top: 5px;
-          padding-left: 10px;
-          padding-bottom: 5px;
+          padding: 3%;
         }
       }
       .comment-wrapper {
@@ -777,6 +782,7 @@
         border: 1px solid $fade;
         border-radius: 5px;
         padding: 10%;
+        padding-top: 13%;
         width: 100%;
         margin-bottom: 10px;
         .text {
@@ -787,13 +793,13 @@
           margin-bottom: 20px;
         }
         table {
-          tr {
-            border-bottom: 1px solid $fade;
-          }
           th {
             color: grey;
             font-weight: normal;
             padding-right: 15px;
+          }
+          th, td {
+            padding-bottom: 10px;
           }
         }
       } 
